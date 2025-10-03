@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <!--<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Solumatica">
+    <title>Solumática</title>
+
+    <script>
+      var onloadCallback = function() {
+        grecaptcha.render('html_element', {
+          'sitekey' : '6LfiJMIZAAAAAIvBBAgk2wB5_dpEwKQjBOa1SQaJ',
+          'callback' : verifyCallback,
+          'expired-callback' : disableCallback,
+          'error-callback' : disableCallback
+        });
+      };
+      var verifyCallback = function(response) {
+        document.getElementById("btnEnviar").disabled = false;
+      };
+      var disableCallback = function() {
+        document.getElementById("btnEnviar").disabled = true;
+      };
+    </script>
+
+    <!--Fontawesome (iconos) -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <!--Formatos del sitio-->
+    <link rel="stylesheet" href="assets/style-guide.css">
+    <link rel="stylesheet" href="assets/site.css">
+    <!--Icono (ampolleta)-->
+    <link rel="icon" type="image/png" href="assets/img/icons/favicon_index.png">
+
+    <!--jquery-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <!--ajax-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  </head>
+  <body>
+
+  <!--solumatica-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sb-navbar">
+    <div class="container">
+      
+      <a class="navbar-brand" href=".">
+        <img src="assets/img/icons/favicon_index.png" alt="Logo Solumatica">
+        <span class="ml-1">Solumática</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!--Menu-->
+        <ul class="navbar-nav mr-auto pt-3 pt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#marcador_contactenos">Contáctenos</a>
+          </li>
+        </ul>
+        <!--/Menu-->
+
+        <!--tienda, blog y redes sociales-->
+        <ul class="navbar-nav pb-3 pb-lg-0">
+          <li class="nav-item">  <!--d-none d-lg-inline-block -->
+            <a class="btn btn-twitter btn-sm" href="login.html" target="_blank"> Acceso clientes <i class="fas fa-user"></i></a>
+          </li>
+        </ul>
+        <!--/tienda, blog y redes sociales-->
+      </div>
+    </div>
+  </nav>
+
+  <!--temas para sitios web y paquetes premium-->
+  <div class="container ">
+    <div class="text-center">
+      <h4 class="mt-2 mb-1"><span class="badge badge-primary badge-pill">Solumática</span> La solución informática que necesita</h4>
+      Somos una empresa que se dedica a potenciar, diseñar y desarrollar ideas tecnológicas innovadoras para diferentes rubros. 
+      <p>
+      <p class="mb-4 "><strong>¿En qué podemos ayudarte?</strong> ¡Mira uno de los temas o servicios que tenemos disponibles!</p>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-3 mb-4 ">
+        <div class="item-preview  text-center">
+          <a href="#" onClick="return false;" class="item-preview-img box-shadow-lg d-block"   rel="nofollow" data-cf-modified-612c1efa0c099eb335495d3f-="">
+            <img class="lazy img-fluid" src="assets/img/screenshots/premium/sb-ui-kit-pro-html.jpg" alt="Premium Bootstrap 4 UI Kit - SB UI Kit Pro">
+          </a>
+          <h6 class="mt-3 mb-0">Necesito tener mi propio sitio web</h6>
+          <div class="small">!!! Ningún problema!!! Elige el nombre del diseño que más te gusta, y solicítanos una cotización</div>
+          <br>
+          <a href="https://startbootstrap.com/templates/" class="btn btn-sm btn-twitter" target="_blank"><i class="fas fa-search"></i> Elegir diseño</a>
+          <a href="#marcador_contactenos" id="sitioweb" class="btn btn-sm btn-info" ><i class="fas fa-envelope"></i> Contáctanos</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="item-preview text-center">
+        <a href="#" onClick="return false;" class="item-preview-img box-shadow-lg d-block" rel="nofollow" data-cf-modified-612c1efa0c099eb335495d3f-="">
+        <img class="lazy img-fluid" src="assets/img/screenshots/premium/sb-ui-kit-pro-angular.jpg" alt="Premium Angular 9 UI Kit - SB UI Kit Pro">
+        </a>
+        <h6 class="mt-3 mb-0">Necesito orientación y/o asesoría</h6>
+        <div class="small">Te apoyamos con cualquier tema del área informática que tengas. La primera asesoría si no es muy compleja, completamente gratis :D</div>
+        <br>
+        <a href="#marcador_contactenos" id="asesoria" class="btn btn-sm btn-info" ><i class="fas fa-envelope"></i> Contáctanos</a>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="item-preview text-center">
+          <a href="#" onClick="return false;" class="item-preview-img box-shadow-lg d-block" rel="nofollow" data-cf-modified-612c1efa0c099eb335495d3f-="">
+          <img class="lazy img-fluid" src="assets/img/screenshots/premium/sb-ui-kit-pro-vue.jpg" alt="Premium Vue.js UI Kit - SB UI Kit Pro Vue">
+          </a>
+          <h6 class="mt-3 mb-0">También realizamos desarrollo de aplicaciones</h6>
+        <div class="small">Cualquier aplicación que necesites puedes contar con nosotros</div>
+        <br>
+        <a href="desarrollo.html" class="btn btn-sm btn-twitter" target="_blank"><i class="fas fa-search"></i> Ver desarrollos</a>
+        <a href="#marcador_contactenos" id="desarrollo" class="btn btn-sm btn-info" ><i class="fas fa-envelope"></i> Contáctanos</a>
+      </div>
+    </div>
+
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="item-preview text-center">
+          <a href="#" onClick="return false;" class="item-preview-img box-shadow-lg d-block" rel="nofollow" data-cf-modified-612c1efa0c099eb335495d3f-="">
+            <img class="lazy img-fluid" src="assets/img/screenshots/premium/sb-admin-pro-angular.jpg" alt="Bootstrap Angular 9 Admin Theme - SB Admin Pro Angular">
+          </a>
+          <br>
+          <h6 class="mt-3 mb-0">Quiero capacitarme en herramientas de Office</h6>
+          <div class="small">Excel, Word y otras aplicaciones se han vuelto fundamentales en el día a día</div>
+          <span class="badge badge-danger badge-pill">No disponible por el momento!</span>
+        </div>
+      </div>
+    </div>
+</div>
+
+  <!--Entregamos-->
+  <main>
+    <hr class="mb-5 custom">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="card border-0 shadow">
+              <div class="card-body">
+                <h4 class="mt-2 mb-1"><span class="badge badge-primary badge-pill">Nuevo!</span> Últimas asesorías realizadas</h4>
+              </div>
+
+              <div class="list-group list-group-flush">
+                <a target="_blank" rel="nofollow" href="https://portaltransbank.cl/afiliacion/registrate.html?gclid=EAIaIQobChMIz5XRndKt6wIVxQiRCh1pQQG5EAAYASAAEgJby_D_BwE#/online?utm_source=google&utm_medium=search&utm_campaign=ventas-internet" class="list-group-item list-group-item-action">
+                  <div class="treehouse-title"><span class="badge badge-info badge-pill">Desarrollo</span> Transbank Webpay Plus - Potencia tus Ventas Online</div>
+                  <div class="treehouse-description mb-2">Integración en tu sitio web para dejar funcionando el botón de pago.</div>
+                </a>
+
+                <a target="_blank" rel="nofollow" href="https://marketplace.zoom.us/docs/guides" class="list-group-item list-group-item-action">
+                  <div class="treehouse-title"><span class="badge badge-info badge-pill">Desarrollo</span> Integración con la API de Zoom Meeting</div>
+                  <div class="treehouse-description mb-2">Reuniones instantáneas Habilita reuniones de video en su sitio web o en aplicaciones móviles de manera rápida y fácil. Un clic para comenzar o unirse a las reuniones. Cree una identificación personal, de sala o de reunión.</div>
+                </a>
+
+                <a href="#" onClick="return false;" target="_blank" rel="nofollow"  class="list-group-item list-group-item-action">
+                  <div class="treehouse-title"><span class="badge badge-info badge-pill">Desarrollo</span> Sistema de reproducción de voz</div>
+                  <div class="treehouse-description mb-2">Desarrollado para clínicas y centros médicos para realizar el llamado de pacientes y otro tipo de atenciones.</div>
+                </a>
+
+                <a href="#" onClick="return false;" target="_blank" rel="nofollow"  class="list-group-item list-group-item-action">
+                  <div class="treehouse-title"><span class="badge badge-danger badge-pill">Capacitación</span> Consumo de servicios web (Api Rest) en Android</div>
+                  <div class="treehouse-description mb-2">Asesoría realizada en Android, respecto del consumo de una API Rest y posterior despliegue en una lista (RecyclerView).</div>
+                </a>
+
+                <a href="#" onClick="return false;" target="_blank" rel="nofollow"  class="list-group-item list-group-item-action">
+                  <div class="treehouse-title"><span class="badge badge-secondary badge-pill">Sitios web</span> Actualización del sitio web de Solumática</div>
+                  <div class="treehouse-description mb-2">Mejoramos la gráfica de nuestro sitio optimizándola para ser vista desde cualquier dispositivo.</div>
+                </a>
+
+              </div>
+            </div>
+
+            <!--666-->
+            <div class="card-body">
+            </div>
+
+
+            <div class="card border-0 shadow">
+              <div class="card-body">
+                <h4 class="mt-2 mb-1"><span class="badge badge-primary badge-pill">Social!</span> Aportamos con nuestro conocimiento </h4>
+              </div>
+
+              <div class="list-group list-group-flush">
+                <a href="#" onClick="return false;" target="_blank" rel="nofollow"  class="list-group-item list-group-item-action">
+                  <div class="treehouse-title"><span class="badge badge-danger badge-pill">Capacitación</span> Capacitación digital a adultos mayores</div>
+                  <div class="treehouse-description mb-2">Realizamos capacitaciones a adultos mayores y/o personas sin trabajo de forma gratuita.</div>
+                  <span class="badge badge-danger badge-pill">No disponible por el momento!</span>
+                </a>
+
+                <a href="#" onClick="return false;" target="_blank" rel="nofollow"  class="list-group-item list-group-item-action">
+                  <div class="treehouse-title"><span class="badge badge-warning badge-pill">Nuevo</span> Queremos que todos tengan acceso a tener un computador</div>
+                  <div class="treehouse-description mb-2">Estamos en busca de alguna empresa, institución, municipalidad o algún otro ente estatal que nos financie dicho proyecto. El cual consiste en un mini ordenador (Raspberry Pi) de bajo costo. Que cuente con herramientas similares a Microsoft Office, y todo lo que conlleva tener un computador acceso a internet, correo y otros</div>
+                </a>
+
+              </div>
+            </div>
+
+            <!--666-->
+
+          </div>
+          
+          <div></div>
+
+          <div class="col-lg-4">
+
+            <div class="card-body">
+            </div>
+
+            <div class="card border-0 shadow mb-5">
+              <div class="card-body">
+                <h4 class="mb-1"><i class="fas fa-graduation-cap"></i>¡Quieres aprender a programar!</h4>
+                <p class="mb-0 small">Realizamos cursos de programación en <strong>.NET C#, ASP.NET, Android</strong> y bases de datos <strong>SQLServer, Oracle, MySQL y otros</strong></p>
+              </div>
+            </div> 
+
+          <div class="card border-0 shadow">
+            <div class="card-body">
+              <div class="card-affiliate-heading text-black-50">Cursos recomendados para principiantes:</div>
+            </div>
+
+            <div class="list-group list-group-flush">
+              <a target="_blank" rel="nofollow" href="https://www.codecademy.com/catalog/language/html-css" class="list-group-item list-group-item-action">
+                <div class="treehouse-title">HTML &amp; CSS</div>
+                <div class="treehouse-description mb-2">HTML es la base de todas las páginas web. Se utiliza para agregar estructura y forma al texto, imágenes y más. CSS es el lenguaje utilizado para dar estilo al contenido HTML.</div>
+              </a>
+              <a target="_blank" rel="nofollow" href="https://www.codecademy.com/catalog/language/javascript" class="list-group-item list-group-item-action">
+                <div class="treehouse-title">JavaScript/JQuery</div>
+                <div class="treehouse-description mb-2">JavaScript es el lenguaje de programación de la web. Puede usarlo para agregar un comportamiento dinámico, almacenar información y manejar solicitudes y respuestas en un sitio web.</div>
+              </a>
+            </div>
+          </div>
+
+          <br>
+
+          <div class="card border-0 shadow">
+            <div class="card-body">
+              <div class="card-affiliate-heading text-black-50">Cursos para personas con conocimientos básicos de programación:</div>
+            </div>
+
+            <div class="list-group list-group-flush">
+              <a target="_blank" rel="nofollow" href="https://www.codecademy.com/learn/paths/analyze-data-with-sql" class="list-group-item list-group-item-action">
+                <div class="treehouse-title">Bases de datos</div>
+                <div class="treehouse-description mb-2">Una base de datos es un “almacén” que nos permite guardar grandes cantidades de información de forma organizada para que luego podamos encontrar y utilizar fácilmente.</div>
+              </a>
+              <a target="_blank" rel="nofollow" href="https://www.codecademy.com/learn/learn-the-basics-of-android" class="list-group-item list-group-item-action">
+                <div class="treehouse-title">Desarrollo de aplicaciones móviles</div>
+                <div class="treehouse-description mb-2">Una aplicación móvil está diseñada para ser ejecutada en teléfonos inteligentes, tabletas y otros dispositivos móviles.</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--cards-->
+    <section class="after-loop">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-8 mb-5 mb-lg-0 mx-auto">
+            <a href="https://startbootstrap.com/templates/" class="after-loop-item card border-0 card-templates shadow-lg" target="_blank">
+              <div class="card-body d-flex align-items-end flex-column text-right">
+                <h4>Plantillas para sitios web</h4>
+                <p class="w-75">Podrás elegir dentro de una gran gama de diseños para la creación de tu sitio web</p>
+                <i class="fas fa-ruler"></i>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-lg-4 col-md-8 mb-5 mb-lg-0 mx-auto">
+            <a href="#marcador_contactenos" id="codigo" class="after-loop-item card border-0 card-snippets shadow-lg" >
+            <div class="card-body d-flex align-items-end flex-column text-right">
+              <h4>Códigos de programación</h4>
+              <p class="w-75">Manejamos distintos lenguajes de programación, así es que envíanos tu requerimiento<!-- y te enviaremos fragmentos de código listos para copiar y pegar-->.</p>
+              <i class="fas fa-code"></i>
+            </div>
+            </a>
+          </div>
+
+          <div class="col-lg-4 col-md-8 mb-5 mb-lg-0 mx-auto">
+            <a href="#marcador_contactenos" id="asesoria1" class="after-loop-item card border-0 card-guides shadow-lg">
+            <div class="card-body d-flex align-items-end flex-column text-right">
+              <h4>Asesorías</h4>
+              <p class="w-75">En base a nuestra experiencia podemos orientarte en temas de desarrollo de aplicaciones</p>
+              <i class="fas fa-book"></i>
+              </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      <!--</div>-->
+    </section>
+    <!--/cards-->
+  </main>
+
+  <!--contactenos-->
+  <div class="mailchimp mt-5">
+    <div class="container text-center">
+      <div class="row justify-content-center">
+        <div class="col-xl-7 col-lg-8">
+          <h3 class="mb-0"><a id="marcador_contactenos">¿Necesitas contactarnos?</a></h3>
+          <p class="text-white-50">Indícanos el tema, tu correo y una breve descripción de lo que necesitas y te contactaremos.</p>
+          <div id="mc_embed_signup">
+
+            <form name="sentMessage" id="contactForm"> <!--name="sentMessage"-->
+
+              <div class="form-group">
+                <label id="exampleFormControlSelect1">Tema</label>
+                <select class="form-control" id="subject">
+                  <option>Necesito tener mi propio sitio web</option>
+                  <option>Necesito orientación y/o asesoría</option>
+                  <option>Quiero capacitarme en Office</option>
+                  <option>Soy una persona mayor y me gustaria aprender un poco de computación</option>
+                  <option>También realizamos desarrollo de aplicaciones</option>
+                  <option>Códigos de programación</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <!--<label for="exampleFormControlInput1">Email address</label>-->
+                <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
+                <!--<input type="email" class="form-control" name="email" id="email" required data-validation-required-message="Por favor ingrese su dirección de correo.">-->
+              </div>
+             
+              <div class="form-group">
+                <!--<label for="exampleFormControlTextarea1">Mensaje:</label>-->
+                <textarea class="form-control" id="message" rows="3" placeholder="Mensaje..." required></textarea>
+              </div>
+
+              <!-- For success/fail messages -->
+              <div id="success"></div>
+
+              <div id="html_element"></div>
+              <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+      
+              <br>
+              <button type="submit" id="btnEnviar" name="btnEnviar" class="btn btn-xl btn-twitter" disabled>Enviar mensaje</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+ 
+  <footer>
+
+    <button class="btn btn-success scroll-top rounded-circle" data-scroll="up" type="button">
+      <i class="fa fa-chevron-up"></i>
+    </button>
+
+    <div class="footer-main bg-dark py-5 small">
+      <div class="container">
+        <!-- <a href="http://www.solumatica.cl/about">Solumatica</a> -->
+        <strong>Solumática</strong>
+        <br>Sitio desarrollado por <a href="mailto:desarrollo@solumatica.cl">desarrollo@solumatica.cl</a>
+        <br>Fecha última actualización: <strong>22-08-2020</strong>
+        <br>Copyright © Solumatica.cl 2016. Todos los derechos reservados
+      </div>
+    </div>
+  </footer>
+ 
+  <script>
+    $(document).ready(function () {
+        document.getElementById("btnEnviar").disabled = true;
+
+        $('a').click(function(){
+            var id = $(this).attr('id');
+            switch (id) {
+              case 'sitioweb':
+                $('#subject option')[0].selected = true;
+                focusAndCursor('#email');
+                break;
+              case 'asesoria':
+			  case 'asesoria1':
+                $('#subject option')[1].selected = true;
+                focusAndCursor('#email');
+                break;
+              case 'capacitacion':
+                $('#subject option')[2].selected = true;
+                focusAndCursor('#email');
+                break;
+              case 'capacitacionmayor':
+                $('#subject option')[3].selected = true;
+                focusAndCursor('#email');
+                break;
+              case 'desarrollo':
+                $('#subject option')[4].selected = true;
+                focusAndCursor('#email');
+                break;
+              case 'codigo':
+                $('#subject option')[5].selected = true;
+                focusAndCursor('#email');
+                break;
+              default:
+            }
+        });
+
+        function focusAndCursor(selector){
+          var input = $(selector);
+          setTimeout(function() {
+            // this focus on last character if input isn't empty
+            tmp = input.val(); input.focus().val("").blur().focus().val(tmp);
+          }, 200);
+        }
+
+        // Scroll top
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+                $('.scroll-top').fadeIn();
+            } else {
+                $('.scroll-top').fadeOut();
+            }
+        });
+
+        $('.scroll-top').click(function () {
+            $("html, body").animate({
+                scrollTop: 0
+            }, 800);
+            return false;
+        });
+
+        $("#contactForm").submit(function(e) {
+            e.preventDefault();
+
+            // get values from FORM
+            var subject = $('select#subject').val();
+            var email = $("input#email").val();
+            var message = $("textarea#message").val();
+
+            $.ajax({
+                url: "./bin/contact_me.php",
+                type: "POST",
+				        dataType: 'JSON',
+                data: {
+                  subject: subject,
+                  email: email,
+                  message: message
+            },
+            cache: false,
+            success: function(response) {
+                  // Success message
+                  $('#success').html("<div class='alert alert-success'>");
+                  $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+                    .append("</button>");
+                  $('#success > .alert-success')
+                    .append("<strong>Tu mensaje ha sido enviado. </strong>");
+                  $('#success > .alert-success')
+                    .append('</div>');
+                  //clear all fields
+                  $('#contactForm').trigger("reset");
+            },
+            error: function() {
+                  // Fail message
+                  $('#success').html("<div class='alert alert-danger'>");
+                  $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+                      .append("</button>");
+                  $('#success > .alert-danger').append("<strong>En este momento parece que el servidor de correo no está respondiendo...</strong> ¿Me puede enviar el mensaje por correo electrónico directamente a <a href=mailto:info@solumatica.cl>info@solumatica.cl</a> ? ¡Lo siento por los inconvenientes ocasionados!");
+                  $('#success > .alert-danger').append('</div>');
+                  //clear all fields
+                  $('#contactForm').trigger("reset");
+                },
+            })
+        });
+    });
+  </script>
+
+</body>
+</html>

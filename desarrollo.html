@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <!--<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Solumatica">
+    <title>Solumática / Desarrollo de aplicaciones</title>
+
+    <script>
+      var onloadCallback = function() {
+        grecaptcha.render('html_element', {
+          'sitekey' : '6LfiJMIZAAAAAIvBBAgk2wB5_dpEwKQjBOa1SQaJ',
+          'callback' : verifyCallback,
+          'expired-callback' : disableCallback,
+          'error-callback' : disableCallback
+        });
+      };
+      var verifyCallback = function(response) {
+        document.getElementById("btnEnviar").disabled = false;
+      };
+      var disableCallback = function() {
+        document.getElementById("btnEnviar").disabled = true;
+      };
+    </script>
+
+    <!--Fontawesome (iconos) -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <!--Formatos del sitio-->
+    <link rel="stylesheet" href="assets/style-guide.css">
+    <link rel="stylesheet" href="assets/site.css">
+    <!--Icono (ampolleta)-->
+    <link rel="icon" type="image/png" href="assets/img/icons/favicon_index.png">
+
+    <!--jquery-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <!--ajax-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  </head>
+  <body>
+
+  <!--solumatica-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sb-navbar">
+    <div class="container">
+      
+      <a class="navbar-brand" href=".">
+        <img src="assets/img/icons/favicon_index.png" alt="Logo Solumatica">
+        <span class="ml-1">Solumática</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!--Menu-->
+        <ul class="navbar-nav mr-auto pt-3 pt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#marcador_contactenos">Contáctenos</a>
+          </li>
+        </ul>
+        <!--/Menu-->
+
+        <!--tienda, blog y redes sociales-->
+        <ul class="navbar-nav pb-3 pb-lg-0">
+          <li class="nav-item">  <!--d-none d-lg-inline-block -->
+            <a class="btn btn-twitter btn-sm" href="login.html" target="_blank"> Acceso clientes <i class="fas fa-user"></i></a>
+          </li>
+        </ul>
+        <!--/tienda, blog y redes sociales-->
+      </div>
+    </div>
+  </nav>
+
+  <!--temas para sitios web y paquetes premium-->
+  <div class="container ">
+    <div class="text-center">
+      <h4 class="mt-2 mb-1"><span class="badge badge-primary badge-pill">Solumática</span> / <span class="badge badge-info badge-pill"> Desarrollo de aplicaciones</span></h4>
+      Queremos entregar soluciones a las personas para que a través de aplicaciones, puedan darle un mayor valor agregado a sus negocios.
+      <p>
+      <p class="mb-4 "><strong>¿En qué podemos ayudarte?</strong> ¡Mira algunos de nuestros desarrollos en las distintas plataformas!</p>
+    </div>
+  </div>
+ 
+  <main>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+
+            <div class="card border-0 shadow">
+              <div class="card-body">
+                <h4 class="mt-2 mb-1"><span class="badge badge-primary badge-pill">Aplicaciones móviles</span> Desarrolladas en Android Studio (Java)</h4>
+              </div>
+
+              <div class="list-group list-group-flush">
+                <a target="_blank" rel="nofollow" href="https://play.google.com/store/apps/details?id=cl.solumatica.infodevice" class="list-group-item list-group-item-action">
+                  <div class="treehouse-title">Información del dispositivo <span class="badge badge-secondary badge-pill">Ver en Google Play</span></div>
+                  <div class="treehouse-description mb-2">Envía o comparte la información de tu dispositivo para casos de extravío o robo.</div>
+                  <div class="treehouse-description mb-2">Esta aplicación te permite conocer las características de tu dispositivo teléfono o Tablet con datos como por ejemplo: el número de IMEI, fabricante, versión de Android, modelo, producto, número de serie y compilación datos vitales para poder recuperarlo o bloquearlo en caso de extravío o robo.</div>
+                </a>
+
+                <a target="_blank" rel="nofollow" href="https://play.google.com/store/apps/details?id=cl.solumatica.morse" class="list-group-item list-group-item-action">
+                  <div class="treehouse-title">Código Morse <span class="badge badge-secondary badge-pill">Ver en Google Play</span></div>
+                  <div class="treehouse-description mb-2">Esta aplicación te ayudara a aprender de forma fácil a utilizar el código o alfabeto morse. Ya sea a través de sonidos (beep), vibraciones o la reproducción a través de señales de luz.</div>
+                </a>
+
+                <a target="_blank" rel="nofollow" href="https://play.google.com/store/apps/details?id=cl.solumatica.leercodigobarras" class="list-group-item list-group-item-action">
+                  <div class="treehouse-title">Lector de códigos de barras <span class="badge badge-secondary badge-pill">Ver en Google Play</span></div>
+                  <div class="treehouse-description mb-2">Esta app. te permitirá realizar la lectura de códigos de barras (2 dimensiones), entregando la fuente con la cual fue generada y la longitud o largo del código leído.</div>
+                </a>
+
+                <a target="_blank" rel="nofollow" href="https://play.google.com/store/apps/details?id=cl.solumatica.puzzle" class="list-group-item list-group-item-action">
+                  <div class="treehouse-title">Puzzle Mame <span class="badge badge-secondary badge-pill">Ver en Google Play</span></div>
+                  <div class="treehouse-description mb-2">Soluciona puzzles con a las imágenes de los juegos de consola antiguos MAME (25 puzzles disponibles).</div>
+                </a>
+              </div>
+            </div>
+
+            <div class="card-body">
+            </div>
+
+            <div class="card border-0 shadow">
+              <div class="card-body">
+                <h4 class="mt-2 mb-1"><span class="badge badge-primary badge-pill">Aplicaciones Windows</span> Desarrolladas con Microsoft .NET (C#)</h4>
+                <p>
+                <div class="treehouse-description mb-1"><strong>Pre-requisitos:</strong> Como la aplicación esta comprimida será necesario que cuente con <a href="https://www.winrar.es/descargas" target="_blank" class="badge badge-danger">WinRAR</a> y <a href="/downloads/AccessDatabaseEngine.exe" class="badge badge-dark">AccessDatabaseEngine</a> para el acceso a la base de datos.</div>
+              </div>
+
+              <div class="list-group list-group-flush">
+                <a href="/downloads/net/Respaldo.rar" target="_blank" rel="nofollow"  class="list-group-item list-group-item-action">
+                  <div class="treehouse-title">Respaldo <span class="badge badge-secondary badge-pill">Descargar</span></div>
+                  <div class="treehouse-description mb-2">Aplicación para realizar copias de seguridad de tus archivos.</div>
+                  <div class="treehouse-description mb-2">Esta aplicación permite a traves de la definición de tipos de archivos (extensiones) la posibilidad de realizar copias de seguridad (Respaldos).</div>
+                  <!-- <span class="badge badge-danger badge-pill">No disponible por el momento!</span> -->
+                </a>
+
+                <a href="/downloads/net/Tag.rar" target="_blank" rel="nofollow"  class="list-group-item list-group-item-action">
+                  <div class="treehouse-title">Tag (Base de conocimientos) <span class="badge badge-secondary badge-pill">Descargar</span></div>
+                  <div class="treehouse-description mb-2">Aplicación para generar una base de conocimientos a través de la creación de tips/tags (Notas).</div>
+                  <div class="treehouse-description mb-2">Esta aplicación permite la creación de algunos tips o tags que permiten generar un base de conocimientos en base a caterogías y sub-categorías de distintos temas .</div>
+                  <!-- <span class="badge badge-danger badge-pill">No disponible por el momento!</span> -->
+                </a>
+
+                <a href="/downloads/net/Inventario.rar" target="_blank" rel="nofollow"  class="list-group-item list-group-item-action">
+                  <div class="treehouse-title">Control inventario <span class="badge badge-secondary badge-pill">Descargar</span></div>
+                  <div class="treehouse-description mb-2">Registro y manejo de la cantidad de productos de una empresa.</div>
+                  <div class="treehouse-description mb-2">Esta aplicación está pensada para llevar el registro del stock de los distintos productos a través de entradas y salidas. Permitiendo así tener un control detallado del stock actual.</div>
+                </a>
+
+                <a href="/downloads/net/ReproduccionVoz.rar" target="_blank" rel="nofollow"  class="list-group-item list-group-item-action">
+                  <div class="treehouse-title">Reproducción de voz <span class="badge badge-secondary badge-pill">Descargar</span></div>
+                  <div class="treehouse-description mb-2">Permite la reproducción de voz a través de dos o más equipos conectados dentro de una red.</div>
+                  <div class="treehouse-description mb-2">Esta aplicación puede ser utilizada dentro una red interna, permitiendo enviar y reproducir mensajes desde un equipo EMISOR (Cliente) hacia un equipo RECEPTOR (Servidor) <br><strong>Nota: </strong>Dentro del equipo EMISOR (Cliente) se debe configurar la IP y puerto del equipo RECEPTOR (Servidor).</div>
+                </a>
+
+                <a href="/downloads/net/Mantenedor.rar" target="_blank" rel="nofollow"  class="list-group-item list-group-item-action">
+                  <div class="treehouse-title">Mantenedor de Usuarios <span class="badge badge-secondary badge-pill">Descargar</span></div>
+                  <div class="treehouse-description mb-2">Módulo para administrar los usuarios de un sistema.</div>
+                  <div class="treehouse-description mb-2">Esta aplicación permite la administración de cuentas de usuarios, y perfiles dentro de un sistema u organización.</div>
+                  <!-- <span class="badge badge-danger badge-pill">No disponible por el momento!</span> -->
+                </a>
+
+                <a href="#" onClick="return false;" target="_blank" rel="nofollow"  class="list-group-item list-group-item-action">
+                  <div class="treehouse-title">Menú principal</div>
+                  <div class="treehouse-description mb-2">Panel de control centralizado de las aplicaciones de una empresa.</div>
+                  <div class="treehouse-description mb-2">Esta aplicación permite integrar en un solo modulo los accesos a todas las aplicaciones que utilizas a diario (Sistemas propios de tu empresa, aplicaciones office, acceso al panel de control, impresoras, carpeta de descargas y otros). Además permite la administración de perfiles de usuario, según área y rol asignado.</div>
+                  <!-- <span class="badge badge-danger badge-pill">No disponible por el momento!</span> -->
+                </a>
+
+                <a href="#" onClick="return false;" target="_blank" rel="nofollow"  class="list-group-item list-group-item-action">
+                  <div class="treehouse-title">Reporte de errores (Tickets)</div>
+                  <div class="treehouse-description mb-2">Administración de ticket de atención.</div>
+                  <div class="treehouse-description mb-2">Mediante esta aplicación los usuarios de la empresa, registran los problemas o incidencias que se van produciendo durante el día, ya sean problemas asociados al software/programas o si corresponde a problemas con el equipamiento/hardware. Esto alimenta un módulo de seguimiento que es monitoreado por los soportes del área informática, los cuales deben ir cerrando dichas incidencias.</div>
+                </a>
+
+                <a href="#" onClick="return false;" target="_blank" rel="nofollow"  class="list-group-item list-group-item-action">
+                  <div class="treehouse-title">Monitoreo de equipos</div>
+                  <div class="treehouse-description mb-2">Esta aplicación permite un control de los computadores de la empresa.</div>
+                  <div class="treehouse-description mb-2">Este programa provee la información de los equipos registrados dentro de un dominio, de tal forma que los soportes puedan tener información para actuar de forma preventiva ante situaciones de riesgo que puedan provocar la pérdida de información vital para la empresa, básicamente el monitor revisa el espacio en disco de un equipo, si su antivirus se encuentra actualizado, si sus respaldos están al día y otros. Además permite la conexión en tiempo real de equipo, para saber la información completa del equipo como por ejemplo: el nombre, su IP, MAC, sistema operativo, información de espacio en discos, impresoras conectadas, carpetas compartidas, procesos, servicios, software instalado y otros.</div>
+                </a>
+
+              </div>
+            </div>
+
+            <div class="card-body">
+            </div>
+
+            <div class="card border-0 shadow">
+              <div class="card-body">
+                <h4 class="mt-2 mb-1"><span class="badge badge-primary badge-pill">Aplicaciones Web</span> Desarrolladas con ASP Clásico y Microsoft ASP.NET (C#)</h4>
+              </div>
+
+              <div class="list-group list-group-flush">
+                <a href="#" onClick="return false;" target="_blank" rel="nofollow"  class="list-group-item list-group-item-action">
+                  <div class="treehouse-title">Control de Procesos (Mecanizado y Distribución)</div>
+                  <div class="treehouse-description mb-2">Proceso de control en la distribución de correspondencia.</div>
+                  <div class="treehouse-description mb-2">Este sitio web permite a los usuarios, realizar distintos procesos operativos como por ejemplo: ingresar un proceso, generación de muestras, para finalmente ser impresas y distribuidas.</div>
+                  <!-- <span class="badge badge-danger badge-pill">No disponible por el momento!</span> -->
+                </a>
+
+                <a href="#" onClick="return false;" target="_blank" rel="nofollow"  class="list-group-item list-group-item-action">
+                  <div class="treehouse-title">Control cotizaciones</div>
+                  <div class="treehouse-description mb-2">Procesos internos de una empresa de climatización.</div>
+                  <div class="treehouse-description mb-2">Este sitio permite la programación de visitas, realización de cotizaciones y control de las cotizaciones por facturar.</div>
+                </a>
+
+                <a href="#" onClick="return false;" target="_blank" rel="nofollow"  class="list-group-item list-group-item-action">
+                  <div class="treehouse-title">Control Terceros</div>
+                  <div class="treehouse-description mb-2">Proceso de control en la distribución de correspondencia.</div>
+                  <div class="treehouse-description mb-2">Este sitio web permite a los usuarios (terceros), generar todo tipos de consultas del proceso operativo que realizan, permitiendo así saber la trazabilidad completa de un envío, información de pagos, despachos, atención a clientes, entrega de envíos, solicitud de materiales y otros.</div>
+                </a>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    <!--</div>-->
+  </main>
+
+  <!--contactenos-->
+  <div class="mailchimp mt-5">
+    <div class="container text-center">
+      <div class="row justify-content-center">
+        <div class="col-xl-7 col-lg-8">
+          <h3 class="mb-0"><a id="marcador_contactenos">¿Necesitas contactarnos?</a></h3>
+          <p class="text-white-50">Indícanos el tema, tu correo y una breve descripción de lo que necesitas y te contactaremos.</p>
+          
+		  <div id="mc_embed_signup">
+            <form name="sentMessage" id="contactForm"> <!--name="sentMessage"-->
+
+              <div class="form-group">
+                <label id="exampleFormControlSelect1">Tema</label>
+                <select class="form-control" id="subject">
+                  <option>Necesito tener mi propio sitio web</option>
+                  <option>Necesito orientación y/o asesoría</option>
+                  <option>Quiero capacitarme en Office</option>
+                  <option>Soy una persona mayor y me gustaria aprender un poco de computación</option>
+                  <option selected>También realizamos desarrollo de aplicaciones</option>
+                  <option>Códigos de programación</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
+              </div>
+             
+              <div class="form-group">
+                <textarea class="form-control" id="message" rows="3" placeholder="Mensaje..." required></textarea>
+              </div>
+
+
+              <!-- For success/fail messages -->
+              <div id="success"></div>
+
+              <div id="html_element"></div>
+              <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+      
+              <br>
+              <button type="submit" id="btnEnviar" name="btnEnviar" class="btn btn-xl btn-twitter" disabled>Enviar mensaje</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+ 
+  <footer>
+    <button class="btn btn-success scroll-top rounded-circle" data-scroll="up" type="button">
+      <i class="fa fa-chevron-up"></i>
+    </button>
+
+    <div class="footer-main bg-dark py-5 small">
+      <div class="container">
+        <strong>Solumática</strong>
+        <br>Sitio desarrollado por <a href="mailto:desarrollo@solumatica.cl">desarrollo@solumatica.cl</a>
+        <br>Fecha última actualización: <strong>22-08-2020</strong>
+        <br>Copyright © Solumatica.cl 2016. Todos los derechos reservados
+      </div>
+    </div>
+  </footer>
+ 
+  <script>
+    $(document).ready(function () {
+        document.getElementById("btnEnviar").disabled = true;
+
+        $('a').click(function(){
+            var id = $(this).attr('id');
+            switch (id) {
+              case 'sitioweb':
+                $('#subject option')[0].selected = true;
+                focusAndCursor('#email');
+                break;
+              case 'asesoria':
+                $('#subject option')[1].selected = true;
+                focusAndCursor('#email');
+                break;
+              case 'capacitacion':
+                $('#subject option')[2].selected = true;
+                focusAndCursor('#email');
+                break;
+              case 'capacitacionmayor':
+                $('#subject option')[3].selected = true;
+                focusAndCursor('#email');
+                break;
+              case 'desarrollo':
+                $('#subject option')[4].selected = true;
+                focusAndCursor('#email');
+                break;
+              case 'codigo':
+                $('#subject option')[5].selected = true;
+                focusAndCursor('#email');
+                break;
+              default:
+            }
+        });
+
+        function focusAndCursor(selector){
+          var input = $(selector);
+          setTimeout(function() {
+            // this focus on last character if input isn't empty
+            tmp = input.val(); input.focus().val("").blur().focus().val(tmp);
+          }, 200);
+        }
+
+        // Scroll top
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+                $('.scroll-top').fadeIn();
+            } else {
+                $('.scroll-top').fadeOut();
+            }
+        });
+
+        $('.scroll-top').click(function () {
+            $("html, body").animate({
+                scrollTop: 0
+            }, 800);
+            return false;
+        });
+
+        $("#contactForm").submit(function(e) {
+            e.preventDefault();
+
+            // get values from FORM
+            var subject = $('select#subject').val();
+            var email = $("input#email").val();
+            var message = $("textarea#message").val();
+
+            $.ajax({
+                  url: "./bin/contact_me.php",
+                  type: "POST",
+                  dataType: 'JSON',
+                  data: {
+                    subject: subject,
+                    email: email,
+                    message: message
+                  },
+                  cache: false,
+                  success: function(response) {
+                    $('#success').html("<div class='alert alert-success'>");
+                    $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+                      .append("</button>");
+                    $('#success > .alert-success')
+                      .append("<strong>Tu mensaje ha sido enviado. </strong>");
+                    $('#success > .alert-success')
+                      .append('</div>');
+                    //clear all fields
+                    $('#contactForm').trigger("reset");
+                  },
+                  error: function() {
+                      // Fail message
+                      $('#success').html("<div class='alert alert-danger'>");
+                      $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+                          .append("</button>");
+                      $('#success > .alert-danger').append("<strong>En este momento parece que el servidor de correo no está respondiendo...</strong> ¿Me puede enviar el mensaje por correo electrónico directamente a <a href=mailto:info@solumatica.cl>info@solumatica.cl</a> ? ¡Lo siento por los inconvenientes ocasionados!");
+                      $('#success > .alert-danger').append('</div>');
+                      //clear all fields
+                      $('#contactForm').trigger("reset");
+                    },
+            })
+        });
+    });
+  </script>
+
+</body>
+</html>
