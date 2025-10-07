@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,7 @@
   <meta name="author" content="Solumatica">
   <title>Acceso clientes | Iniciar sesión</title>
   <style>
-    .error{
+    .error {
       color: red;
     }
   </style>
@@ -27,26 +28,27 @@
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-<body class="hold-transition login-page" onload="document.getElementById('username').focus();">
-<div class="login-box">
 
-  <!--<a class="navbar-brand" href=".">
+<body class="hold-transition login-page" onload="document.getElementById('username').focus();">
+  <div class="login-box">
+
+    <!--<a class="navbar-brand" href=".">
     <img src="assets/img/icons/favicon_index.png" alt="Logo Solumatica" width="15%" height="15%">
     <span class="ml-1">Solumática</span>
   </a>-->
 
-  <div class="login-logo">
-    <img src="assets/img/icons/favicon_index.png" alt="Logo Solumatica" width="15%" height="15%">
-    <span class="ml-1">Solumática</span><br>
-    <b>Acceso clientes</b>
-  </div>
-  <!-- /.login-logo -->
-  <div class="card">
-    <div class="card-body login-card-body">
-      <p class="login-box-msg">Iniciar sesión</p>
+    <div class="login-logo">
+      <img src="assets/img/icons/favicon_index.png" alt="Logo Solumatica" width="15%" height="15%">
+      <span class="ml-1">Solumática</span><br>
+      <b>Acceso clientes</b>
+    </div>
+    <!-- /.login-logo -->
+    <div class="card">
+      <div class="card-body login-card-body">
+        <p class="login-box-msg">Iniciar sesión</p>
 
-    <form>
-        <!--<div class="input-group mb-3">
+        <form>
+          <!--<div class="input-group mb-3">
           <div class="col-4">
               Cliente:
           </div>
@@ -59,70 +61,71 @@
           </div>
         </div>-->
 
-        <div class="input-group mb-3">
-          <input type="text" id="username" name="username" value="" class="form-control" placeholder="Usuario" required>
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-user"></span>
+          <div class="input-group mb-3">
+            <input type="text" id="username" name="username" value="" class="form-control" placeholder="Usuario"
+              required>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-user"></span>
+              </div>
             </div>
           </div>
-        </div>
-        
-        <div class="input-group mb-3">
-          <input type="password" name="password" value="" class="form-control" placeholder="Contraseña" required>
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="row">
-          <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" id="remember">
-              <label for="remember">
-                Recuérdame
-              </label>
-            </div>
-          </div>
-          <!-- /.col -->
-          <div class="col-5">
-            <button type="submit" class="btn btn-primary btn-block">Siguiente</button>
-          </div>
-          <!-- /.col -->
-        </div>
-    </form>
 
-      <div class="social-auth-links text-center mb-3">
-        <p>- O -</p>
-        <a href="#" class="btn btn-block btn-primary">
-          <i class="fab fa-facebook mr-2"></i> Iniciar sesión usando Facebook
-        </a>
-        <a href="#" class="btn btn-block btn-danger">
-          <i class="fab fa-google-plus mr-2"></i> Iniciar sesión usando Google+
-        </a>
-      </div>
-      <!-- /.social-auth-links -->
+          <div class="input-group mb-3">
+            <input type="password" name="password" value="" class="form-control" placeholder="Contraseña" required>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div>
 
-      <!--<p class="mb-1">
+          <div class="row">
+            <div class="col-8">
+              <div class="icheck-primary">
+                <input type="checkbox" id="remember">
+                <label for="remember">
+                  Recuérdame
+                </label>
+              </div>
+            </div>
+            <!-- /.col -->
+            <div class="col-5">
+              <button type="submit" class="btn btn-primary btn-block">Siguiente</button>
+            </div>
+            <!-- /.col -->
+          </div>
+        </form>
+
+        <div class="social-auth-links text-center mb-3">
+          <p>- O -</p>
+          <a href="#" class="btn btn-block btn-primary">
+            <i class="fab fa-facebook mr-2"></i> Iniciar sesión usando Facebook
+          </a>
+          <a href="#" class="btn btn-block btn-danger">
+            <i class="fab fa-google-plus mr-2"></i> Iniciar sesión usando Google+
+          </a>
+        </div>
+        <!-- /.social-auth-links -->
+
+        <!--<p class="mb-1">
         <a href="forgot-password.html">I forgot my password</a>
       </p>
       <p class="mb-0">
         <a href="register.html" class="text-center">Register a new membership</a>
       </p>-->
+      </div>
+      <!-- /.login-card-body -->
     </div>
-    <!-- /.login-card-body -->
   </div>
-</div>
-<!-- /.login-box -->
+  <!-- /.login-box -->
 
-<!-- jQuery -->
-<script src="assets/theme/plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="assets/theme/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
-<script src="assets/theme/dist/js/adminlte.min.js"></script>
+  <!-- jQuery -->
+  <script src="assets/theme/plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="assets/theme/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="assets/theme/dist/js/adminlte.min.js"></script>
 
 </body>
 </html>

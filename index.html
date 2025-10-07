@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Solumatica">
     <title>Solumática</title>
-
     <script>
       var onloadCallback = function() {
         grecaptcha.render('html_element', {
@@ -32,20 +31,20 @@
     <link rel="stylesheet" href="assets/site.css">
     <!--Icono (ampolleta)-->
     <link rel="icon" type="image/png" href="assets/img/icons/favicon_index.png">
-
     <!--jquery-->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
     <!--ajax-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>-->
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+	<!--666 https://es.stackoverflow.com/questions/301543/error-xhr-send-options-hascontent-options-data-null-al-enviar-dato-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
-
   <!--solumatica-->
   <nav class="navbar navbar-expand-lg navbar-light bg-light sb-navbar">
     <div class="container">
-      
       <a class="navbar-brand" href=".">
         <img src="assets/img/icons/favicon_index.png" alt="Logo Solumatica">
         <span class="ml-1">Solumática</span>
@@ -53,16 +52,14 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fas fa-bars"></i>
       </button>
-
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <!--Menu-->
         <ul class="navbar-nav mr-auto pt-3 pt-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="#marcador_contactenos">Contáctenos</a>
+            <a class="nav-link" href="#marcador_contactenos" id="title" >Contáctenos</a>
           </li>
         </ul>
         <!--/Menu-->
-
         <!--tienda, blog y redes sociales-->
         <ul class="navbar-nav pb-3 pb-lg-0">
           <li class="nav-item">  <!--d-none d-lg-inline-block -->
@@ -84,6 +81,20 @@
     </div>
 
     <div class="row justify-content-center">
+	
+		<div class="col-md-6 col-lg-3 mb-4">
+			<div class="item-preview text-center">
+			  <a href="#" onClick="return false;" class="item-preview-img box-shadow-lg d-block" rel="nofollow" data-cf-modified-612c1efa0c099eb335495d3f-="">
+			  <img class="lazy img-fluid" src="assets/img/screenshots/premium/sb-ui-kit-pro-vue.jpg" alt="Premium Vue.js UI Kit - SB UI Kit Pro Vue">
+			  </a>
+			  <h6 class="mt-3 mb-0">También realizamos desarrollo de aplicaciones</h6>
+			<div class="small">Cualquier aplicación que necesites puedes contar con nosotros</div>
+			<br>
+			<a href="desarrollo_apps.html" class="btn btn-sm btn-twitter"><i class="fas fa-search"></i> Ver desarrollos</a>
+			<a href="#marcador_contactenos" id="desarrollo" class="btn btn-sm btn-info" ><i class="fas fa-envelope"></i> Contáctanos</a>
+		  </div>
+		</div>
+	
       <div class="col-md-6 col-lg-3 mb-4 ">
         <div class="item-preview  text-center">
           <a href="#" onClick="return false;" class="item-preview-img box-shadow-lg d-block"   rel="nofollow" data-cf-modified-612c1efa0c099eb335495d3f-="">
@@ -112,19 +123,6 @@
       <div class="col-md-6 col-lg-3 mb-4">
         <div class="item-preview text-center">
           <a href="#" onClick="return false;" class="item-preview-img box-shadow-lg d-block" rel="nofollow" data-cf-modified-612c1efa0c099eb335495d3f-="">
-          <img class="lazy img-fluid" src="assets/img/screenshots/premium/sb-ui-kit-pro-vue.jpg" alt="Premium Vue.js UI Kit - SB UI Kit Pro Vue">
-          </a>
-          <h6 class="mt-3 mb-0">También realizamos desarrollo de aplicaciones</h6>
-        <div class="small">Cualquier aplicación que necesites puedes contar con nosotros</div>
-        <br>
-        <a href="desarrollo.html" class="btn btn-sm btn-twitter" target="_blank"><i class="fas fa-search"></i> Ver desarrollos</a>
-        <a href="#marcador_contactenos" id="desarrollo" class="btn btn-sm btn-info" ><i class="fas fa-envelope"></i> Contáctanos</a>
-      </div>
-    </div>
-
-      <div class="col-md-6 col-lg-3 mb-4">
-        <div class="item-preview text-center">
-          <a href="#" onClick="return false;" class="item-preview-img box-shadow-lg d-block" rel="nofollow" data-cf-modified-612c1efa0c099eb335495d3f-="">
             <img class="lazy img-fluid" src="assets/img/screenshots/premium/sb-admin-pro-angular.jpg" alt="Bootstrap Angular 9 Admin Theme - SB Admin Pro Angular">
           </a>
           <br>
@@ -149,7 +147,7 @@
               </div>
 
               <div class="list-group list-group-flush">
-                <a target="_blank" rel="nofollow" href="https://portaltransbank.cl/afiliacion/registrate.html?gclid=EAIaIQobChMIz5XRndKt6wIVxQiRCh1pQQG5EAAYASAAEgJby_D_BwE#/online?utm_source=google&utm_medium=search&utm_campaign=ventas-internet" class="list-group-item list-group-item-action">
+                <a target="_blank" rel="nofollow" href="https://www.transbankdevelopers.cl/producto/webpay" class="list-group-item list-group-item-action">
                   <div class="treehouse-title"><span class="badge badge-info badge-pill">Desarrollo</span> Transbank Webpay Plus - Potencia tus Ventas Online</div>
                   <div class="treehouse-description mb-2">Integración en tu sitio web para dejar funcionando el botón de pago.</div>
                 </a>
@@ -324,7 +322,7 @@
 
               <div class="form-group">
                 <!--<label for="exampleFormControlInput1">Email address</label>-->
-                <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
+                <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required >
                 <!--<input type="email" class="form-control" name="email" id="email" required data-validation-required-message="Por favor ingrese su dirección de correo.">-->
               </div>
              
@@ -347,18 +345,15 @@
     </div>
   </div>
  </div>
- 
   <footer>
-
     <button class="btn btn-success scroll-top rounded-circle" data-scroll="up" type="button">
       <i class="fa fa-chevron-up"></i>
     </button>
-
     <div class="footer-main bg-dark py-5 small">
       <div class="container">
         <!-- <a href="http://www.solumatica.cl/about">Solumatica</a> -->
         <strong>Solumática</strong>
-        <br>Sitio desarrollado por <a href="mailto:desarrollo@solumatica.cl">desarrollo@solumatica.cl</a>
+        <br>Sitio desarrollado por <a href="mailto:solumatica.desarrollo@gmail.com">solumatica.desarrollo@gmail.com</a>
         <br>Fecha última actualización: <strong>22-08-2020</strong>
         <br>Copyright © Solumatica.cl 2016. Todos los derechos reservados
       </div>
@@ -368,10 +363,15 @@
   <script>
     $(document).ready(function () {
         document.getElementById("btnEnviar").disabled = true;
-
         $('a').click(function(){
             var id = $(this).attr('id');
+			//alert(id);
             switch (id) {
+			case 'title':
+                //$('#subject option')[0].selected = true;
+                focusAndCursor('#email');
+                break;
+			
               case 'sitioweb':
                 $('#subject option')[0].selected = true;
                 focusAndCursor('#email');
@@ -427,48 +427,67 @@
 
         $("#contactForm").submit(function(e) {
             e.preventDefault();
-
             // get values from FORM
             var subject = $('select#subject').val();
             var email = $("input#email").val();
             var message = $("textarea#message").val();
-
-            $.ajax({
-                url: "./bin/contact_me.php",
-                type: "POST",
-				        dataType: 'JSON',
-                data: {
-                  subject: subject,
-                  email: email,
-                  message: message
-            },
-            cache: false,
-            success: function(response) {
-                  // Success message
-                  $('#success').html("<div class='alert alert-success'>");
-                  $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                    .append("</button>");
-                  $('#success > .alert-success')
-                    .append("<strong>Tu mensaje ha sido enviado. </strong>");
-                  $('#success > .alert-success')
-                    .append('</div>');
-                  //clear all fields
-                  $('#contactForm').trigger("reset");
-            },
-            error: function() {
-                  // Fail message
-                  $('#success').html("<div class='alert alert-danger'>");
-                  $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                      .append("</button>");
-                  $('#success > .alert-danger').append("<strong>En este momento parece que el servidor de correo no está respondiendo...</strong> ¿Me puede enviar el mensaje por correo electrónico directamente a <a href=mailto:info@solumatica.cl>info@solumatica.cl</a> ? ¡Lo siento por los inconvenientes ocasionados!");
-                  $('#success > .alert-danger').append('</div>');
-                  //clear all fields
-                  $('#contactForm').trigger("reset");
-                },
-            })
+			var table = '<table style="width:100%" table border="1" cellpadding="10px" cellspacing="0">';
+			table += ' <tr>';
+			table += '   <td>Asunto:</td>';
+			table += '   <td>' + subject + '</td>';
+			table += ' </tr>';
+			table += ' <tr>';
+			table += '   <td>Dirección de correo:</td>';
+			table += '   <td>' + email + '</td>';
+			table += ' </tr>';
+			table += ' <tr>';
+			table += '   <td>Mensaje:</td>';
+			table += '   <td>' + message + '</td>';
+			table += ' </tr>';
+			table += '</table>';
+			// alert(table);
+			var token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJPcmdfaWQiOiIwIiwiQXBwX2lkIjoiMyIsIlBlcl9pZCI6IjAiLCJVc3VfaWQiOiI0IiwiVXNlcm5hbWUiOiJnam9ycXVlcmEiLCJQZXJmaWwiOiIoUHVibGljbykiLCJOb21icmVDb21wbGV0byI6IkdlcmFyZG8gSm9ycXVlcmEgUmV5ZXMiLCJFbWFpbCI6ImdlcmFyZG8uam9ycXVlcmEucmV5ZXNAZ21haWwuY29tIiwiUmVtb3RlSXBBZGRyZXNzIjoiMTI3LjAuMC4xIiwibmJmIjoxNzI2NTk1NTU0LCJleHAiOjE3NTgxMzE1NTQsImlhdCI6MTcyNjU5NTU1NCwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzI4NSIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjcyODUifQ.06vCYIer8gGeQahmzSvYOnfNE_sJ7Y8MDUMX_LpYyas';
+			var obj = {
+			  "recipients": "solumatica.desarrollo@gmail.com",
+			  "subject": "Solumática - Formulario Web de contacto 2024",
+			  "htmlContent": table // "plainTextContent": "body"
+			};
+			var jData = JSON.stringify(obj);
+			$.ajax({
+				url: 'https://www.solumatica.cl/api/core/mensajeria/EnviarCorreo',
+				type: 'post',
+				headers: { "Authorization": "Bearer " + token },
+				dataType: 'json',
+				contentType: 'application/json; charset=utf-8',
+				data: jData,
+				success: function (data) {
+					// Success message // alert("Saved successfully" + data); // console.log(data);
+					  $('#success').html("<div class='alert alert-success'>");
+					  $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+						.append("</button>");
+					  $('#success > .alert-success')
+						.append("<strong>Tu mensaje ha sido enviado. </strong>");
+					  $('#success > .alert-success')
+						.append('</div>');
+					  //clear all fields
+					  $('#contactForm').trigger("reset");
+				},
+				/* fail : function( jqXHR, textStatus ) {
+					alert( "Request failed: " + textStatus );
+				}, */ 
+				error: function(jqXHR, textStatus, errorThrown) {
+					// Fail message // alert("status: " + jqXHR.status + ", textStatus: " + textStatus + ", errorThrown: " + errorThrown);
+					  $('#success').html("<div class='alert alert-danger'>");
+					  $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+						  .append("</button>");
+					  $('#success > .alert-danger').append("<strong>En este momento parece que el servidor de correo no está respondiendo...</strong> ¿Me puede enviar el mensaje por correo electrónico directamente a <a href=mailto:solumatica.desarrollo@gmail.com>solumatica.desarrollo@gmail.com</a> ? ¡Lo siento por los inconvenientes ocasionados!");
+					  $('#success > .alert-danger').append('</div>');
+					  //clear all fields
+					  $('#contactForm').trigger("reset");
+				} 
+			 });
         });
     });
   </script>
-
 </body>
 </html>
