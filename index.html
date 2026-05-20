@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta http-equiv="content-type" content="text/html;charset=utf-8">
   <!--<meta charset="utf-8">
@@ -7,7 +8,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Solumatica">
   <title>Solumática</title>
+
+  <!-- Google reCAPTCHA -->
+  <script src="https://www.google.com/recaptcha/enterprise.js?render=6LdJXfQsAAAAAEhc4P0Hd0uLcOFbu74NXcGk1KzK"></script>
   <script>
+    function onSubmit(token) {
+      //document.getElementById("demo-form").submit();
+      alert("reCAPTCHA verificado, el formulario se puede enviar");
+    }
+  </script>
+  <!--<script>
     var onloadCallback = function () {
       grecaptcha.render('html_element', {
         'sitekey': '6LdJXfQsAAAAAEhc4P0Hd0uLcOFbu74NXcGk1KzK',
@@ -22,7 +32,7 @@
     var disableCallback = function () {
       document.getElementById("btnEnviar").disabled = true;
     };
-  </script>
+  </script>-->
 
   <!--Fontawesome (iconos) -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
@@ -407,8 +417,12 @@
               <div id="success"></div>
 
               <div id="html_element"></div>
-              <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async
-                defer></script>
+              <!--<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async
+                defer></script>-->
+              <button class="g-recaptcha" data-sitekey="6LdJXfQsAAAAAEhc4P0Hd0uLcOFbu74NXcGk1KzK"
+                data-callback='onSubmit' data-action='submit'>
+                Submit
+              </button>
 
               <br>
               <button type="submit" id="btnEnviar" name="btnEnviar" class="btn btn-xl btn-twitter" disabled>Enviar
@@ -564,4 +578,5 @@
     });
   </script>
 </body>
+
 </html>
