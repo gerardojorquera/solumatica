@@ -419,13 +419,15 @@
               <div id="html_element"></div>
               <!--<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async
                 defer></script>-->
-              <button class="g-recaptcha" data-sitekey="6LdJXfQsAAAAAEhc4P0Hd0uLcOFbu74NXcGk1KzK"
+              <!--<button class="g-recaptcha" data-sitekey="6LdJXfQsAAAAAEhc4P0Hd0uLcOFbu74NXcGk1KzK"
                 data-callback='onSubmit' data-action='submit'>
                 Submit
-              </button>
-
+              </button>-->
               <br>
-              <button type="submit" id="btnEnviar" name="btnEnviar" class="btn btn-xl btn-twitter" disabled>Enviar
+              <button 
+                class="g-recaptcha" data-sitekey="6LdJXfQsAAAAAEhc4P0Hd0uLcOFbu74NXcGk1KzK"
+                data-callback='onSubmit' data-action='submit'
+                type="submit" id="btnEnviar" name="btnEnviar" class="btn btn-xl btn-twitter" >Enviar
                 mensaje</button>
             </form>
           </div>
