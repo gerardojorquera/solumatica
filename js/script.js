@@ -7,9 +7,10 @@ emailjs.init(
 );
 
 // 2. Escuchar el envío del formulario
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evita que la página se recargue
-
+/*document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita que la página se recargue */
+function onSubmit(token) {
+    alert("¡Google me llamó y el token es: " + token);
     const subject = document.getElementById('subject').value;
     const name = document.getElementById('user_name').value;
     const email = document.getElementById('user_email').value;
@@ -40,4 +41,5 @@ document.getElementById('contact-form').addEventListener('submit', function(even
             document.getElementById('success').innerHTML = "<div class='alert alert-danger'>Hubo un error al enviar el mensaje. Inténtalo de nuevo.</div>";
             console.error("Detalle del error:", error);
         });
-});
+//});
+    }
