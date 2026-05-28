@@ -17,7 +17,7 @@ function onSubmit(token) {
     const email = document.getElementById('user_email').value;
     const message = document.getElementById('user_message').value;
 
-    alert(subject + " // " + name + " // " + email + " // " + message);
+    // alert(subject + " // " + name + " // " + email + " // " + message);
     // 3. Recolectar los datos escritos por el usuario
     const datosFormulario = {
         title: "Solumática - Formulario Web de contacto: " + subject,
@@ -33,12 +33,12 @@ function onSubmit(token) {
     // emailjs.send("TU_SERVICE_ID", "TU_TEMPLATE_ID", datosFormulario)
     emailjs.send("service_payxvxb", "template_b56fnaa", datosFormulario)
         .then(function(response) {
-            alert("¡Correo enviado con éxito!");
+            // alert("¡Correo enviado con éxito!");
             document.getElementById('success').innerHTML = "<div class='alert alert-success'>¡Correo enviado con éxito!</div>";
             // Limpia el formulario
             document.getElementById('contact-form').reset();
         }, function(error) {
-            alert("Hubo un error al enviar el mensaje. Inténtalo de nuevo.");
+            // alert("Hubo un error al enviar el mensaje. Inténtalo de nuevo.");
             document.getElementById('success').innerHTML = "<div class='alert alert-danger'>Hubo un error al enviar el mensaje. Inténtalo de nuevo.</div>";
             console.error("Detalle del error:", error);
         });
