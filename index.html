@@ -9,10 +9,11 @@
   <!-- Google reCAPTCHA -->
   <script src="https://www.google.com/recaptcha/enterprise.js?render=6LdJXfQsAAAAAEhc4P0Hd0uLcOFbu74NXcGk1KzK"></script>
   <script>
-    function onSubmit(token) {
-      alert("reCAPTCHA verificado, el formulario se puede enviar");
+  function onSubmit(token) {
+      // Si quieres comprobar si entra aquí, descomenta la siguiente línea:
+      alert("¡Google me llamó y el token es: " + token);
       document.getElementById("contact-form").submit();
-    }
+  }
   </script>
   <!-- Correo: Incluir la librería oficial de EmailJS -->
   <script src="js/emailjs.min.js"></script>
@@ -399,11 +400,6 @@
               <!-- For success/fail messages -->
               <div id="success"></div>
               <br>
-              <!--<button class="g-recaptcha btn btn-xl btn-twitter" data-sitekey="6LdJXfQsAAAAAEhc4P0Hd0uLcOFbu74NXcGk1KzK"
-                data-callback='onSubmit' data-action='submit'">Enviar mensaje</button>-->
-              <!--<button type=" submit" id="btnEnviar" name="btnEnviar" class="btn btn-xl btn-twitter">Enviar
-                mensaje</button>-->
-              
               <button type="button" 
                       class="g-recaptcha btn btn-xl btn-twitter" 
                       data-sitekey="6LdJXfQsAAAAAEhc4P0Hd0uLcOFbu74NXcGk1KzK"
