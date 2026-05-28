@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta http-equiv="content-type" content="text/html;charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,15 +28,12 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
     integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
     crossorigin="anonymous"></script>
-  <!--ajax-->
-  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>-->
-  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
-  <!--666 https://es.stackoverflow.com/questions/301543/error-xhr-send-options-hascontent-options-data-null-al-enviar-dato-->
+  <!-- Ajax -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
-  <!-- solumatica -->
+  <!-- Solumatica -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light sb-navbar">
     <div class="container">
       <a class="navbar-brand" href=".">
@@ -68,7 +64,7 @@
     </div>
   </nav>
 
-  <!--temas para sitios web y paquetes premium-->
+  <!-- Temas para sitios web y paquetes premium -->
   <div class="container ">
     <div class="text-center">
       <h4 class="mt-2 mb-1"><span class="badge badge-primary badge-pill">Solumática</span> La solución informática que
@@ -81,7 +77,6 @@
     </div>
 
     <div class="row justify-content-center">
-
       <div class="col-md-6 col-lg-3 mb-4">
         <div class="item-preview text-center">
           <a href="#" onClick="return false;" class="item-preview-img box-shadow-lg d-block" rel="nofollow"
@@ -413,7 +408,6 @@
     </button>
     <div class="footer-main bg-dark py-5 small">
       <div class="container">
-        <!-- <a href="http://www.solumatica.cl/about">Solumatica</a> -->
         <strong>Solumática</strong>
         <br>Sitio desarrollado por <a href="mailto:solumatica.desarrollo@gmail.com">solumatica.desarrollo@gmail.com</a>
         <br>Fecha última actualización: <strong>22-08-2020</strong>
@@ -427,7 +421,6 @@
       var selector = '#user_name';
       $('a').click(function () {
         var id = $(this).attr('id');
-        // alert(id);
         switch (id) {
           case 'title':
             focusAndCursor(selector);
@@ -462,8 +455,7 @@
       });
 
       $('#subject').change(function () {
-        //var valorSeleccionado = $(this).val();
-        focusAndCursor('#user_name');
+        focusAndCursor('#user_name'); // var valorSeleccionado = $(this).val();
       });
 
       function focusAndCursor(selector) {
