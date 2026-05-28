@@ -10,6 +10,9 @@ emailjs.init(
 /*document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Evita que la página se recargue */
 function onSubmit(token) {
+    const btnEnviar = document.getElementById('btnEnviar');
+    btnEnviar.setAttribute("disabled", "disabled"); // Deshabilita el botón para evitar múltiples envíos
+
     // alert("¡Google me llamó y el token es: " + token);
     // 3. Recolectar los datos escritos por el usuario
     const subject = document.getElementById('subject').value;
@@ -41,5 +44,6 @@ function onSubmit(token) {
                 // console.error("Detalle del error: ", error);
             });
     }
+    btnEnviar.setAttribute("disabled", ""); // Habilita el botón después de la validación
 }
 //});
