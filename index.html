@@ -3,46 +3,29 @@
 
 <head>
   <meta http-equiv="content-type" content="text/html;charset=utf-8">
-  <!--<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Solumatica">
   <title>Solumática</title>
-
   <!-- Google reCAPTCHA -->
   <script src="https://www.google.com/recaptcha/enterprise.js?render=6LdJXfQsAAAAAEhc4P0Hd0uLcOFbu74NXcGk1KzK"></script>
   <script>
-    // function onSubmit(token) {
-    //   //document.getElementById("demo-form").submit();
-    //   alert("reCAPTCHA verificado, el formulario se puede enviar");
-    // }
+    function onSubmit(token) {
+      // alert("reCAPTCHA verificado, el formulario se puede enviar");
+      document.getElementById("contact-form").submit();
+    }
   </script>
-  <!--<script>
-    var onloadCallback = function () {
-      grecaptcha.render('html_element', {
-        'sitekey': '6LdJXfQsAAAAAEhc4P0Hd0uLcOFbu74NXcGk1KzK',
-        'callback': verifyCallback,
-        'expired-callback': disableCallback,
-        'error-callback': disableCallback
-      });
-    };
-    var verifyCallback = function (response) {
-      document.getElementById("btnEnviar").disabled = false;
-    };
-    var disableCallback = function () {
-      document.getElementById("btnEnviar").disabled = true;
-    };
-  </script>-->
-
-  <!--Fontawesome (iconos) -->
+  <!-- Correo: Incluir la librería oficial de EmailJS -->
+  <script src="js/emailjs.min.js"></script>
+  <script src="js/script.js" defer></script>
+  <!-- Fontawesome (iconos) -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
     integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-  <!--Formatos del sitio-->
+  <!-- Formatos del sitio-->
   <link rel="stylesheet" href="assets/style-guide.css">
   <link rel="stylesheet" href="assets/site.css">
-  <!--Icono (ampolleta)-->
+  <!-- Icono (ampolleta)-->
   <link rel="icon" type="image/png" href="assets/img/icons/favicon_index.png">
-  <!--jquery-->
+  <!-- jquery-->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
@@ -387,11 +370,10 @@
             contactaremos.</p>
           <div id="mc_embed_signup">
 
-            <form name="sentMessage" id="contactForm"> <!--name="sentMessage"-->
-
+            <form id="contact-form" name="contact-form">
               <div class="form-group">
                 <label id="exampleFormControlSelect1">Tema</label>
-                <select class="form-control" id="subject">
+                <select class="form-control" id="subject" name="subject">
                   <option>Necesito tener mi propio sitio web</option>
                   <option>Necesito orientación y/o asesoría</option>
                   <option>Quiero capacitarme en Office</option>
@@ -402,33 +384,26 @@
               </div>
 
               <div class="form-group">
-                <!--<label for="exampleFormControlInput1">Email address</label>-->
-                <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com"
+                <input type="text" class="form-control" id="user_name" name="user_name" placeholder="Juan Perez"
                   required>
-                <!--<input type="email" class="form-control" name="email" id="email" required data-validation-required-message="Por favor ingrese su dirección de correo.">-->
               </div>
 
               <div class="form-group">
-                <!--<label for="exampleFormControlTextarea1">Mensaje:</label>-->
-                <textarea class="form-control" id="message" rows="3" placeholder="Mensaje..." required></textarea>
+                <input type="email" class="form-control" id="user_email" name="user_email"
+                  placeholder="juanperez@example.com" required>
+              </div>
+
+              <div class="form-group">
+                <textarea class="form-control" id="user_message" name="user_message" rows="3" placeholder="Mensaje..."
+                  required></textarea>
               </div>
 
               <!-- For success/fail messages -->
               <div id="success"></div>
-
-              <div id="html_element"></div>
-              <!--<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async
-                defer></script>-->
-              <!--<button class="g-recaptcha" data-sitekey="6LdJXfQsAAAAAEhc4P0Hd0uLcOFbu74NXcGk1KzK"
-                data-callback='onSubmit' data-action='submit'>
-                Submit
-              </button>-->
               <br>
-              <button 
-                class="g-recaptcha" data-sitekey="6LdJXfQsAAAAAEhc4P0Hd0uLcOFbu74NXcGk1KzK"
-                data-callback='onSubmit' data-action='submit'
-                type="submit" id="btnEnviar" name="btnEnviar" class="btn btn-xl btn-twitter" >Enviar
-                mensaje</button>
+              <button class="g-recaptcha btn btn-xl btn-twitter" data-sitekey="6LdJXfQsAAAAAEhc4P0Hd0uLcOFbu74NXcGk1KzK"
+                data-callback='onSubmit' data-action='submit'">Enviar mensaje</button>
+              <!--<button type="submit" id="btnEnviar" name="btnEnviar" class="btn btn-xl btn-twitter">Enviar mensaje</button>-->
             </form>
           </div>
         </div>
@@ -449,46 +424,49 @@
       </div>
     </div>
   </footer>
-
+  <!--Script para el formulario de contacto-->
   <script>
     $(document).ready(function () {
-      document.getElementById("btnEnviar").disabled = true;
+      var selector = '#user_name';
       $('a').click(function () {
         var id = $(this).attr('id');
-        //alert(id);
+        // alert(id);
         switch (id) {
           case 'title':
-            //$('#subject option')[0].selected = true;
-            focusAndCursor('#email');
+            focusAndCursor(selector);
             break;
-
           case 'sitioweb':
             $('#subject option')[0].selected = true;
-            focusAndCursor('#email');
+            focusAndCursor(selector);
             break;
           case 'asesoria':
           case 'asesoria1':
             $('#subject option')[1].selected = true;
-            focusAndCursor('#email');
+            focusAndCursor(selector);
             break;
           case 'capacitacion':
             $('#subject option')[2].selected = true;
-            focusAndCursor('#email');
+            focusAndCursor(selector);
             break;
           case 'capacitacionmayor':
             $('#subject option')[3].selected = true;
-            focusAndCursor('#email');
+            focusAndCursor(selector);
             break;
           case 'desarrollo':
             $('#subject option')[4].selected = true;
-            focusAndCursor('#email');
+            focusAndCursor(selector);
             break;
           case 'codigo':
             $('#subject option')[5].selected = true;
-            focusAndCursor('#email');
+            focusAndCursor(selector);
             break;
           default:
         }
+      });
+
+      $('#subject').change(function () {
+        //var valorSeleccionado = $(this).val();
+        focusAndCursor('#user_name');
       });
 
       function focusAndCursor(selector) {
@@ -513,69 +491,6 @@
           scrollTop: 0
         }, 800);
         return false;
-      });
-
-      $("#contactForm").submit(function (e) {
-        e.preventDefault();
-        // get values from FORM
-        var subject = $('select#subject').val();
-        var email = $("input#email").val();
-        var message = $("textarea#message").val();
-        var table = '<table style="width:100%" table border="1" cellpadding="10px" cellspacing="0">';
-        table += ' <tr>';
-        table += '   <td>Asunto:</td>';
-        table += '   <td>' + subject + '</td>';
-        table += ' </tr>';
-        table += ' <tr>';
-        table += '   <td>Dirección de correo:</td>';
-        table += '   <td>' + email + '</td>';
-        table += ' </tr>';
-        table += ' <tr>';
-        table += '   <td>Mensaje:</td>';
-        table += '   <td>' + message + '</td>';
-        table += ' </tr>';
-        table += '</table>';
-        // alert(table);
-        var token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJPcmdfaWQiOiIwIiwiQXBwX2lkIjoiMyIsIlBlcl9pZCI6IjAiLCJVc3VfaWQiOiI0IiwiVXNlcm5hbWUiOiJnam9ycXVlcmEiLCJQZXJmaWwiOiIoUHVibGljbykiLCJOb21icmVDb21wbGV0byI6IkdlcmFyZG8gSm9ycXVlcmEgUmV5ZXMiLCJFbWFpbCI6ImdlcmFyZG8uam9ycXVlcmEucmV5ZXNAZ21haWwuY29tIiwiUmVtb3RlSXBBZGRyZXNzIjoiMTI3LjAuMC4xIiwibmJmIjoxNzI2NTk1NTU0LCJleHAiOjE3NTgxMzE1NTQsImlhdCI6MTcyNjU5NTU1NCwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzI4NSIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjcyODUifQ.06vCYIer8gGeQahmzSvYOnfNE_sJ7Y8MDUMX_LpYyas';
-        var obj = {
-          "recipients": "solumatica.desarrollo@gmail.com",
-          "subject": "Solumática - Formulario Web de contacto 2024",
-          "htmlContent": table // "plainTextContent": "body"
-        };
-        var jData = JSON.stringify(obj);
-        $.ajax({
-          url: 'https://www.solumatica.cl/api/core/mensajeria/EnviarCorreo',
-          type: 'post',
-          headers: { "Authorization": "Bearer " + token },
-          dataType: 'json',
-          contentType: 'application/json; charset=utf-8',
-          data: jData,
-          success: function (data) {
-            // Success message // alert("Saved successfully" + data); // console.log(data);
-            $('#success').html("<div class='alert alert-success'>");
-            $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-              .append("</button>");
-            $('#success > .alert-success')
-              .append("<strong>Tu mensaje ha sido enviado. </strong>");
-            $('#success > .alert-success')
-              .append('</div>');
-            //clear all fields
-            $('#contactForm').trigger("reset");
-          },
-          /* fail : function( jqXHR, textStatus ) {
-            alert( "Request failed: " + textStatus );
-          }, */
-          error: function (jqXHR, textStatus, errorThrown) {
-            // Fail message // alert("status: " + jqXHR.status + ", textStatus: " + textStatus + ", errorThrown: " + errorThrown);
-            $('#success').html("<div class='alert alert-danger'>");
-            $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-              .append("</button>");
-            $('#success > .alert-danger').append("<strong>En este momento parece que el servidor de correo no está respondiendo...</strong> ¿Me puede enviar el mensaje por correo electrónico directamente a <a href=mailto:solumatica.desarrollo@gmail.com>solumatica.desarrollo@gmail.com</a> ? ¡Lo siento por los inconvenientes ocasionados!");
-            $('#success > .alert-danger').append('</div>');
-            //clear all fields
-            $('#contactForm').trigger("reset");
-          }
-        });
       });
     });
   </script>
