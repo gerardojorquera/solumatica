@@ -10,7 +10,7 @@ emailjs.init(
 /*document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Evita que la página se recargue */
 function onSubmit(token) {
-    alert("¡Google me llamó y el token es: " + token);
+    // alert("¡Google me llamó y el token es: " + token);
     
     const subject = document.getElementById('subject').value;
     const name = document.getElementById('user_name').value;
