@@ -11,7 +11,8 @@ emailjs.init(
     event.preventDefault(); // Evita que la página se recargue */
 function onSubmit(token) {
     const btnEnviar = document.getElementById('btnEnviar');
-    btnEnviar.setAttribute("disabled", "disabled"); // Deshabilita el botón para evitar múltiples envíos
+    //btnEnviar.setAttribute("disabled", "disabled"); // Deshabilita el botón para evitar múltiples envíos
+    btnEnviar.disabled = true;
 
     // alert("¡Google me llamó y el token es: " + token);
     // 3. Recolectar los datos escritos por el usuario
@@ -44,6 +45,7 @@ function onSubmit(token) {
                 // console.error("Detalle del error: ", error);
             });
     }
-    btnEnviar.setAttribute("disabled", ""); // Habilita el botón después de la validación
+    // btnEnviar.setAttribute("disabled", ""); // Habilita el botón después de la validación
+    btnEnviar.disabled = false;
 }
 //});
