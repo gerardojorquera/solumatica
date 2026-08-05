@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Contacto con reCAPTCHA v2</title>
+    <!-- 1. Cargar el script oficial de Google reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+
+    <h2>Formulario de Contacto</h2>
+    
+    <form id="miFormulario" action="procesar.php" method="POST">
+        <!-- Campos de ejemplo -->
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+
+        <!-- 2. Contenedor del reCAPTCHA -->
+        <!-- REEMPLAZA "TU_CLAVE_DE_SITIO_AQUÍ" con la clave pública que te da Google -->
+        <div class="g-recaptcha" 
+             data-sitekey="6Lc_IXctAAAAAJr5oEL9R7IZdzhlUJCaha8avvvZ" 
+             data-callback="captchaCorrecto" 
+             data-expired-callback="captchaExpirado">
+        </div>
+        <br>
+
+        <!-- 3. Botón de envío (Deshabilitado por defecto) -->
+        <button type="submit" id="btnEnviar" disabled>Enviar Mensaje</button>
+    </form>
+
+    <!-- 4. Lógica de control con JavaScript -->
+    <script>
+        // Esta función se ejecuta automáticamente cuando el usuario pasa la validación
+        function captchaCorrecto(response) {
+            if (response.length !== 0) {
+                document.getElementById('btnEnviar').removeAttribute('disabled');
+            }
+        }
+
+        // Esta función se ejecuta si el token del captcha expira (suele durar 2 minutos)
+        function captchaExpirado() {
+            document.getElementById('btnEnviar').setAttribute('disabled', 'disabled');
+        }
+    </script>
+
+</body>
+</html>
