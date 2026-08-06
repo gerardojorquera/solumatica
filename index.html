@@ -58,7 +58,7 @@
             <li class="nav-item"><a class="nav-link" href="desarrollo.html">Diseño Web</a></li>
             <li class="nav-item"><a class="nav-link" href="desarrollo_apps.html">Aplicaciones</a></li>
             <li class="nav-item"><a class="nav-link" href="#asesorias">Casos de Éxito</a></li>
-            <li class="nav-item"><a class="nav-link btn btn-primary text-white px-3 ml-lg-2"
+            <li class="nav-item"><a id="btnContactanos" class="nav-link btn btn-primary text-white px-3 ml-lg-2"
                 href="#contacto">Contáctanos</a></li>
           </ul>
         </div>
@@ -73,7 +73,7 @@
         <p class="text-muted max-width-600 mx-auto">Potenciamos, diseñamos y desarrollamos ideas tecnológicas
           innovadoras
           para hacer crecer tu empresa o negocio.</p>
-        <a href="#contacto" class="btn btn-primary btn-lg mt-3 shadow-sm">Cotizar un Proyecto</a>
+        <a href="#contacto" id="btnCotizar" class="btn btn-primary btn-lg mt-3 shadow-sm">Cotizar un Proyecto</a>
       </div>
     </header>
 
@@ -117,7 +117,8 @@
                 <h4 class="card-title font-weight-bold text-dark">Asesoría TI Especializada</h4>
                 <p class="card-text text-muted flex-grow-1">¿Tienes desafíos técnicos o integraciones complejas? Te
                   apoyamos en el proceso. Tu primera reunión técnica es gratuita.</p>
-                <a href="#contacto" class="btn btn-outline-primary btn-block font-weight-bold mt-auto">Agendar
+                <a href="#contacto" id="btnAgendarConsultoria"
+                  class="btn btn-outline-primary btn-block font-weight-bold mt-auto">Agendar
                   Consultoría</a>
               </div>
             </div>
@@ -194,7 +195,8 @@
               <!-- CONTENEDOR PARA MENSAJES DE ÉXITO O ERROR (NUEVO AGREGADO) -->
               <div id="success-message"></div>
 
-              <button type="submit" id="btnEnviar" class="btn btn-success btn-block btn-lg font-weight-bold shadow-sm">Enviar Mensaje</button>
+              <button type="submit" id="btnEnviar"
+                class="btn btn-success btn-block btn-lg font-weight-bold shadow-sm">Enviar Mensaje</button>
 
             </form>
           </div>
@@ -211,6 +213,7 @@
     </footer>
 
     <script>
+      // Validar el formulario antes de enviarlo y manejar el reCAPTCHAv2
       document.getElementById('form-contacto').addEventListener('submit', function (e) {
         e.preventDefault(); // Detiene el envío síncrono nativo para procesar con JavaScript
 
@@ -226,6 +229,35 @@
           onSubmit(response);
         } else {
           alert("Error: No se detectó la función onSubmit en js/script.js");
+        }
+      });
+
+      // FUNCIÓN CENTRALIZADA: Mueve la pantalla y da el foco al input de contacto
+      function ejecutarFocoContacto() {
+        const inputNombre = document.getElementById('user_name');
+        if (inputNombre) {
+          inputNombre.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          setTimeout(() => {
+            inputNombre.focus();
+          }, 400); // Espera a que termine la animación del scroll
+        }
+      }
+
+      // ESCENARIO 1: Cuando el usuario viene de OTRA página (carga inicial con #contacto)
+      window.addEventListener('DOMContentLoaded', function () {
+        if (window.location.hash === '#contacto') {
+          ejecutarFocoContacto();
+        }
+      });
+
+      // ESCENARIO 2: Cuando ya estás en index.html (Funciona todas las veces que hagas clic)
+      document.addEventListener('click', function (evento) {
+        const elemento = evento.target;
+
+        // Verificamos si es un enlace (A) y si su atributo href contiene '#contacto'
+        if (elemento.tagName === 'A' && elemento.getAttribute('href') && elemento.getAttribute('href').includes('#contacto')) {
+          evento.preventDefault(); // Evita que la URL se congele y permite clics infinitos
+          ejecutarFocoContacto();  // Ejecuta la animación y el cursor de inmediato
         }
       });
     </script>
