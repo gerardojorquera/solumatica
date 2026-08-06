@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerardo Jorquera | Portafolio de Soluciones y Automatización Python</title>
+    <style>
+        :root {
+            --primary: #1e293b;
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --text-dark: #0f172a;
+            --text-light: #64748b;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            line-height: 1.5;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 1rem;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.05em;
+        }
+
+        header p {
+            margin: 1rem auto 0;
+            max-width: 600px;
+            font-size: 1.15rem;
+            color: #94a3b8;
+        }
+
+        .contact-link {
+            display: inline-block;
+            margin-top: 1.5rem;
+            background-color: var(--accent);
+            color: white;
+            text-decoration: none;
+            padding: 0.6rem 1.5rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .contact-link:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-preview {
+            background-color: #0f172a;
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #38bdf8;
+            font-family: monospace;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .card-content {
+            padding: 1.75rem;
+            flex-grow: 1;
+        }
+
+        .card-category {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--accent);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-title {
+            margin: 0 0 0.75rem 0;
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .card-text {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            background: #f1f5f9;
+            color: #475569;
+            padding: 0.25rem 0.6rem;
+            border-radius: 0.25rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .card-actions {
+            padding: 1.25rem 1.75rem;
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            flex: 1;
+            text-align: center;
+            padding: 0.6rem;
+            border-radius: 0.375rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #475569;
+            border: 1px solid #cbd5e1;
+        }
+
+        .btn-secondary:hover {
+            background-color: #f1f5f9;
+            border-color: #94a3b8;
+        }
+
+        .custom-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 5rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Gerardo Jorquera</h1>
+        <p>Desarrollo soluciones prácticas en Python orientadas a generar valor inmediato. A través de la automatización de procesos, el despliegue de aplicaciones y la integración de Inteligencia Artificial, ayudo a las empresas a liberar carga laboral y disminuir drásticamente los tiempos de ejecución en sus distintos equipos.</p>
+        <a href="https://github.com/gerardojorquera" target="_blank" class="contact-link">Ver Perfil Completo en
+            GitHub</a>
+    </header>
+
+    <div class="container">
+        <div class="grid">
+
+            <!-- <div class="card-content">
+                <div class="card-category">Inteligencia Artificial</div>
+                <h3 class="card-title">Consultor Inteligente de Documentos PDF</h3>
+                <p class="card-text">Permite a las empresas cargar manuales, contratos o reportes extensos y hacerles preguntas directas en lenguaje natural, obteniendo respuestas instantáneas basadas estrictamente en el archivo.</p>
+                <div class="tags">
+                    <span class="tag">Streamlit</span>
+                    <span class="tag">Groq / OpenAI</span>
+                    <span class="tag">RAG Architecture</span>
+                </div>
+            </div> -->
+
+            <!-- PROYECTO 1: CHATBOT IA -->
+            <div class="card">
+                <div class="card-preview">
+                    <span>[ [🤖 AI Chatbot] ]</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-category">Inteligencia Artificial</div>
+                    <h3 class="card-title">Chatbot</h3>
+                    <p class="card-text">Permite a las empresas subir su información a través de un archivo de texto y
+                        hacerles preguntas directas en lenguaje natural, obteniendo respuestas instantáneas basadas
+                        estrictamente en el archivo.</p>
+                    <div class="tags">
+                        <span class="tag">Streamlit</span>
+                        <span class="tag">Groq / OpenAI</span>
+                        <span class="tag">RAG Architecture</span>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <!-- Si lo despliegas en Streamlit Cloud pones el link en Probar Demo -->
+                    <a href="https://rag-cafeteria-groq.onrender.com/" target="_blank" class="btn custom-btn"
+                        style="background-color: #0f7643; color: white;">Probar Demo</a>
+                    <a href="data/cafeteria.txt" target="_blank" class="btn btn-secondary">Ver datos de
+                        entrenamiento</a>
+                </div>
+            </div>
+
+            <!-- PROYECTO 2: CONSOLIDADOR PANDAS -->
+            <div class="card">
+                <div class="card-preview" style="color: #10b981;">
+                    <span>[ 📊 Excel Consolidator ]</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-category">Automatización de Oficina</div>
+                    <h3 class="card-title">Consolidador Inteligente de Reportes Financieros</h3>
+                    <p class="card-text">Elimina horas de trabajo administrativo unificando automáticamente múltiples
+                        archivos Excel dispersos en un único reporte consolidado, limpio de duplicados y estructurado
+                        para análisis de negocio.</p>
+                    <div class="tags">
+                        <span class="tag">Pandas</span>
+                        <span class="tag">Data Cleaning</span>
+                        <span class="tag">Python Core</span>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <a href="https://github.com/gerardojorquera/python-pandas-consolidar-archivos" target="_blank"
+                        class="btn btn-primary" style="flex: 2;">Ver Proyecto en GitHub</a>
+                </div>
+            </div>
+
+            <!-- PROYECTO 3: SCRAPING PLAYWRIGHT -->
+            <div class="card">
+                <div class="card-preview" style="color: #a855f7;">
+                    <span>[ 🌐 Web Scraper Bot ]</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-category">Extracción de Datos</div>
+                    <h3 class="card-title">Extractor Automatizado de Datos</h3>
+                    <p class="card-text">Monitorea y extrae información crítica de sitios web de la competencia de
+                        manera programada. Supera barreras de carga dinámica mediante navegación automatizada para
+                        construir bases de datos de precios u ofertas.</p>
+                    <div class="tags">
+                        <span class="tag">Playwright</span>
+                        <span class="tag">BeautifulSoup</span>
+                        <span class="tag">Web Scraping</span>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <a href="https://github.com/gerardojorquera/python-web-scraping" target="_blank"
+                        class="btn btn-primary" style="flex: 2;">Ver Proyecto en GitHub</a>
+                </div>
+            </div>
+
+            <!-- PROYECTO 4: SISTEMA CRUD GESTIÓN DE USUARIOS -->
+            <div class="card">
+                <div class="card-preview" style="color: #60a5fa;">
+                    <span>[ 🖥️ Web App CRUD & DB ]</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-category">Aplicaciones Web y Bases de Datos</div>
+                    <h3 class="card-title">Sistema Digital de Administración y Registro</h3>
+                    <p class="card-text">Plataforma web dinámica que permite a las empresas gestionar registros en
+                        tiempo real (crear, leer, actualizar y eliminar perfiles) conectada a un motor de base de datos
+                        eficiente, ideal para control de clientes o paneles de administración.</p>
+                    <div class="tags">
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">SQLite</span>
+                        <span class="tag">HTML / Jinja2</span>
+                        <span class="tag">CRUD Architecture</span>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <!-- Si la despliegas en Render o Railway pones el link aquí, si no, puedes dejar solo el botón de GitHub -->
+                    <a href="https://python-sqlite-crud-html-fastapi.onrender.com" target="_blank" class="btn"
+                        style="background-color: #0f7643; color: white;">Probar Demo</a>
+                    <a href="https://github.com/gerardojorquera/python-sqlite-crud-html-fastapi" target="_blank"
+                        class="btn btn-primary" style="flex: 2;">Ver Proyecto en GitHub</a>
+                </div>
+            </div>
+
+            <!-- TARJETA: OTROS PROYECTOS Y SOLUCIONES -->
+            <div class="card" style="border: 1px dashed var(--accent);">
+                <div class="card-preview" style="color: #f59e0b;">
+                    <span>[ 📁 + Proyectos & Scripts ]</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-category">Automatización y Más</div>
+                    <h3 class="card-title">Soluciones Complementarias de Software</h3>
+                    <p class="card-text">Colección de scripts y herramientas enfocadas en la optimización operativa.
+                        Incluye organizadores inteligentes de archivos locales, filtros dinámicos de datos y utilidades
+                        personalizadas diseñadas para eliminar cuellos de botella en tareas diarias de oficina.</p>
+                    <div class="tags">
+                        <span class="tag">Scripts de Consola</span>
+                        <span class="tag">OS Automation</span>
+                        <span class="tag">File Management</span>
+                        <span class="tag">Python Utilities</span>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <!-- Botón con el verde exacto (#0f7643) para ver el catálogo completo -->
+                    <a href="https://github.com/gerardojorquera" target="_blank" class="btn"
+                        style="background-color: #0f7643; color: white; flex: 2;">Ver Más Soluciones</a>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Gerardo Jorquera. Soluciones de Software a Medida.</p>
+    </footer>
+
+</body>
+
+</html>
