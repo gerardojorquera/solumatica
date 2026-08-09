@@ -18,44 +18,128 @@
 
 <body>
 
-  <!--solumatica-->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light sb-navbar">
+  <!-- MENÚ DE NAVEGACIÓN -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container">
-
-      <a class="navbar-brand" href=".">
-        <img src="assets/img/icons/favicon_index.png" alt="Logo Solumatica">
-        <span class="ml-1">Solumática</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
+      <a class="navbar-brand font-weight-bold" href="index.html">Solumática</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="desarrollo.html">Diseño Web</a></li>
+          <li class="nav-item"><a class="nav-link" href="desarrollo_apps.html">Aplicaciones</a></li>
+          <li class="nav-item"><a id="btnContactanos" class="nav-link btn btn-primary text-white px-3 ml-lg-2"
+              href="index.html#contacto">Contáctanos</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
-  <div class="container ">
-    <div class="text-center">
-      <h4 class="mt-2 mb-1"><span class="badge badge-primary badge-pill">Solumática</span> / <span
-          class="badge badge-danger badge-pill"> Privacidad</span></h4>
-      <img class="lazy img-fluid" src="assets/img/privacidad.png" alt="Privacidad">
-      <p><strong>POLÍTICA DE PRIVACIDAD DE SOLUMATICA</strong></p>
-      Cuando usa nuestros programas, nos confía su información. Comprendemos que se trata de una gran responsabilidad y
-      trabajamos arduamente para proteger su información.
+  <!-- Encabezado Principal (H1 SEO) -->
+  <header class="py-4 bg-white text-center border-bottom shadow-sm">
+    <div class="container">
+      <h1 class="h2 font-weight-bold text-dark mb-2">Políticas de Privacidad</h1>
+      <p class="lead text-muted small">En Solumática nos tomamos en serio la seguridad de tus datos. Conoce cómo
+        recopilamos, protegemos y
+        gestionamos tu información de acuerdo a la normativa legal vigente.</p>
     </div>
+  </header>
+
+
+  <div class="container ">
+    <!-- CONTENEDOR PRINCIPAL: PRIVACIDAD (DENTRO DEL CONTAINER GENERAL) -->
+    <div class="container my-5">
+
+      <!-- SECCIÓN DE CLÁUSULAS EN FORMATO DE BLOQUES CORPORATIVOS -->
+      <div class="row g-4 justify-content-center" style="margin-bottom: 50px;">
+        <div class="col-12" style="max-width: 900px;">
+
+          <!-- Bloque 1: Recopilación -->
+          <div
+            style="background: #ffffff; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); margin-bottom: 24px; display: flex; flex-direction: column;">
+            <div style="background: #0f172a; padding: 20px 25px;">
+              <span style="color: #38bdf8; font-weight: 600; font-family: monospace; font-size: 1rem;">[ 📑 Recopilación
+                de Información ]</span>
+            </div>
+            <div style="padding: 25px;">
+              <p style="color: #475569; font-size: 0.95rem; line-height: 1.7; margin-bottom: 0;">
+                Recogemos información únicamente cuando completas nuestro formulario de contacto (como tu nombre, correo
+                electrónico y detalles del requerimiento). Estos datos se obtienen bajo consentimiento explícito para
+                procesar solicitudes comerciales o de soporte técnico.
+              </p>
+            </div>
+          </div>
+
+          <!-- Bloque 2: Uso de datos -->
+          <div
+            style="background: #ffffff; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); margin-bottom: 24px; display: flex; flex-direction: column;">
+            <div style="background: #0f172a; padding: 20px 25px;">
+              <span style="color: #38bdf8; font-weight: 600; font-family: monospace; font-size: 1rem;">[ ⚙️ Uso y
+                Finalidad ]</span>
+            </div>
+            <div style="padding: 25px;">
+              <p style="color: #475569; font-size: 0.95rem; line-height: 1.7; margin-bottom: 0;">
+                Toda la información capturada es procesada de manera estrictamente confidencial. La utilizamos
+                exclusivamente para responder a tus consultas operativas, enviar propuestas de cotización
+                personalizadas, mejorar la experiencia de usuario en nuestra plataforma y coordinar el desarrollo de tus
+                scripts o automatizaciones.
+              </p>
+            </div>
+          </div>
+
+          <!-- Bloque 3: Seguridad y Terceros -->
+          <div
+            style="background: #ffffff; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); margin-bottom: 24px; display: flex; flex-direction: column;">
+            <div style="background: #0f172a; padding: 20px 25px;">
+              <span style="color: #38bdf8; font-weight: 600; font-family: monospace; font-size: 1rem;">[ 🔒 Seguridad y
+                Protección ]</span>
+            </div>
+            <div style="padding: 25px;">
+              <p style="color: #475569; font-size: 0.95rem; line-height: 1.7; margin-bottom: 0;">
+                No vendemos, comercializamos ni transferimos tus datos de identificación personal a terceros.
+                Implementamos medidas de seguridad de software avanzadas y protocolos de encriptación para mantener tu
+                información completamente blindada frente a accesos no autorizados.
+              </p>
+            </div>
+          </div>
+
+          <!-- Bloque 4: Normativa -->
+          <div
+            style="background: #ffffff; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); margin-bottom: 24px; display: flex; flex-direction: column;">
+            <div style="background: #0f172a; padding: 20px 25px;">
+              <span style="color: #38bdf8; font-weight: 600; font-family: monospace; font-size: 1rem;">[ ⚖️ Cumplimiento
+                Legal ]</span>
+            </div>
+            <div style="padding: 25px;">
+              <p style="color: #475569; font-size: 0.95rem; line-height: 1.7; margin-bottom: 0;">
+                Nuestra política de privacidad está diseñada en estricto cumplimiento con la **Ley N° 19.628** sobre
+                protección de la vida privada y la modernización de la **Ley N° 21.719** de Protección de Datos
+                Personales en Chile. Tienes pleno derecho a solicitar la modificación, actualización o eliminación total
+                de tus datos de nuestros sistemas en el momento que lo desees enviando una solicitud a nuestros canales
+                de contacto.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
   </div>
 
   <p>
-  <footer>
-    <div class="footer-main bg-dark py-5 small">
-      <div class="container">
-        <!-- <a href="http://www.solumatica.cl/about">Solumatica</a> -->
-        <strong>Solumática</strong>
-        <br>Sitio desarrollado por <a href="mailto:desarrollo@solumatica.cl">desarrollo@solumatica.cl</a>
-        <br>Fecha última actualización: <strong>22-08-2020</strong>
-        <br>Copyright © Solumatica.cl 2016. Todos los derechos reservados
-      </div>
+    <!-- PIE DE PÁGINA -->
+  <footer class="bg-secondary text-white text-center py-4">
+    <div class="container">
+      <p class="mb-1">Copyright &copy; Solumática 2016 - 2026. Todos los derechos reservados.</p>
+      <small class="text-light">Santiago, Chile | Última actualización: Agosto 2026</small>
     </div>
   </footer>
 
 </body>
+
 </html>
