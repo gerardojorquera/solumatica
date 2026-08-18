@@ -146,12 +146,29 @@
             font-weight: 500;
         }
 
-        .card-actions {
+        /* .card-actions {
             padding: 1.25rem 1.75rem;
             background: #f8fafc;
             border-top: 1px solid #e2e8f0;
             display: flex;
             gap: 1rem;
+        } */
+
+        .card-actions {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            padding: 0 12px 12px;
+        }
+
+        /* Si hay un solo botón */
+        .card-actions .btn:only-child {
+            grid-column: 1 / -1;
+        }
+
+        /* Si hay tres botones, el tercero ocupa toda la fila */
+        .card-actions .btn:nth-child(3):last-child {
+            grid-column: 1 / -1;
         }
 
         .btn {
@@ -428,7 +445,7 @@
 
             <!-- TARJETA: COMBINAR CORRESPONDENCIA PDF -->
             <div class="card">
-                <div class="card-preview" style="color: #f59e0b;">
+                <div class="card-preview" style="color: #14b8a6;">
                     <span>[ 📄 + Combinar Correspondencia ]</span>
                 </div>
                 <div class="card-content">
@@ -449,6 +466,8 @@
                     <!-- Si la despliegas en Render o Railway pones el link aquí, si no, puedes dejar solo el botón de GitHub -->
                     <a href="https://python-combinar-correspondencia-pdf.streamlit.app/" target="_blank" class="btn"
                         style="background-color: #0f7643; color: white;">Probar Demo</a>
+                    <a href="data/datos_certificados.xlsx" target="_blank" class="btn btn-secondary">Ver datos de
+                        ejemplo</a>
                     <a href="https://github.com/gerardojorquera/python-combinar-correspondencia-pdf" target="_blank"
                         class="btn btn-primary" style="flex: 2;">Ver Proyecto en GitHub</a>
                 </div>
