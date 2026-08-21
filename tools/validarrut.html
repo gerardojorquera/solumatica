@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Validador de RUT Chileno</title> -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Validador de RUT Chileno | Verificar y Calcular Dígito Verificador</title>
+
+    <meta name="description"
+        content="Valida un RUT chileno online y calcula automáticamente el dígito verificador utilizando el algoritmo Módulo 11. Herramienta gratuita para verificar RUT de personas y empresas en Chile.">
+
+    <meta name="keywords"
+        content="validar rut, verificador rut, rut chile, calcular digito verificador, dv rut, validar rut chileno, modulo 11, rut online, verificar rut">
+
+    <!-- <meta name="author" content="Tu Nombre o Empresa">
+    <meta name="robots" content="index, follow"> -->
+
+    <!-- Open Graph para redes sociales -->
+    <meta property="og:title" content="Validador de RUT Chileno Online">
+    <meta property="og:description"
+        content="Verifica si un RUT chileno es válido o calcula automáticamente su dígito verificador mediante Módulo 11.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_CL">
+    <meta property="og:url" content="https://www.tudominio.cl/validador-rut">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Validador de RUT Chileno Online">
+    <meta name="twitter:description" content="Valida y calcula el dígito verificador de un RUT chileno.">
+</head>
+
+<style>
+    * {
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        background: #f5f7fb;
+        margin: 0;
+        padding: 40px 20px;
+        color: #0a2540;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: auto;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 3rem;
+        margin-bottom: 10px;
+    }
+
+    .subtitulo {
+        font-size: 1.3rem;
+        margin-bottom: 40px;
+        color: #444;
+    }
+
+    .card {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, .08);
+    }
+
+    .rut-form {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    label {
+        font-size: 1.3rem;
+        font-weight: bold;
+    }
+
+    input {
+        height: 50px;
+        font-size: 1.2rem;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+    }
+
+    #rut {
+        width: 250px;
+    }
+
+    #dv {
+        width: 70px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    button {
+        border: none;
+        background: #0d6efd;
+        color: white;
+        font-size: 1.1rem;
+        padding: 15px 30px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: .3s;
+    }
+
+    button:hover {
+        background: #0b5ed7;
+    }
+
+    .resultado {
+        margin-top: 25px;
+        padding: 15px;
+        border-radius: 10px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        display: none;
+    }
+
+    .success {
+        background: #d1e7dd;
+        color: #0f5132;
+    }
+
+    .error {
+        background: #f8d7da;
+        color: #842029;
+    }
+
+    .info {
+        background: #cff4fc;
+        color: #055160;
+    }
+
+    .ayuda {
+        margin-top: 40px;
+        text-align: left;
+        line-height: 1.7;
+    }
+</style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- <h1>Valida y verifica un RUT chileno</h1> -->
+        <h1>Validador de RUT Chileno Online</h1>
+
+        <h2>Verifica si un RUT es válido</h2>
+
+        <h2>Calcula el dígito verificador de un RUT</h2>
+
+        <h2>¿Cómo funciona el algoritmo Módulo 11?</h2>
+
+        <p class="subtitulo">
+            Ingresa un RUT para validarlo o calcula automáticamente el dígito verificador.
+        </p>
+
+        <div class="card">
+            <form id="rutForm">
+                <div class="rut-form">
+                    <label>RUT:</label>
+
+                    <input type="text" id="rut" placeholder="Número de rut" maxlength="8" inputmode="numeric" required
+                        autofocus>
+
+                    <span style="font-size:30px;">-</span>
+
+                    <input type="text" id="dv" placeholder="DV" maxlength="1">
+
+                    <button onclick="procesarRut()">
+                        Validar
+                    </button>
+                </div>
+            </form>
+
+            <div id="resultado" class="resultado"></div>
+
+        </div>
+
+        <div class="ayuda">
+            <h2>Modo de uso</h2>
+
+            <p>
+                <strong>Validar un RUT:</strong> Ingrese el número de RUT y su dígito
+                verificador, luego pulse <b>Validar</b>.
+            </p>
+
+            <p>
+                <strong>Obtener el dígito verificador:</strong> Ingrese solamente el número
+                de RUT y deje el DV en blanco. Luego pulse <b>Validar</b>.
+            </p>
+        </div>
+
+    </div>
+
+    <script>
+
+        document.getElementById("rutForm").addEventListener("submit", function (e) {
+            e.preventDefault(); // evita recargar la página
+            procesarRut();
+        });
+
+        // Solo permite números en el campo RUT
+        document.getElementById("rut").addEventListener("input", function () {
+            this.value = this.value.replace(/\D/g, "");
+        });
+
+        // Solo permite números o la letra K
+        document.getElementById("dv").addEventListener("input", function () {
+            this.value = this.value
+                .toUpperCase()
+                .replace(/[^0-9K]/g, "")
+                .substring(0, 1);
+        });
+
+        function obtenerDigitoVerificador(mantisa) {
+
+            let strMantisa = mantisa.toString();
+            let mult = 2;
+            let acum = 0;
+
+            try {
+
+                for (let i = strMantisa.length - 1; i >= 0; i--) {
+
+                    let digito = parseInt(strMantisa.charAt(i));
+
+                    acum += digito * mult;
+
+                    mult++;
+
+                    if (mult === 8) {
+                        mult = 2;
+                    }
+                }
+
+                let resultado = 11 - (acum % 11);
+
+                if (resultado === 10) {
+                    return "K";
+                }
+
+                if (resultado === 11) {
+                    return "0";
+                }
+
+                return resultado.toString();
+
+            } catch (e) {
+                return "-1";
+            }
+        }
+
+
+        function validarRutCompleto(numeroRut, dv) {
+
+            numeroRut = numeroRut.toString().trim();
+            dv = dv.toString().trim().toUpperCase();
+
+            if (!/^\d+$/.test(numeroRut)) {
+                return false;
+            }
+
+            let dvCalculado = obtenerDigitoVerificador(parseInt(numeroRut));
+
+            return dvCalculado === dv;
+        }
+
+
+        function procesarRut() {
+
+            const rut = document.getElementById("rut").value.trim();
+            const dv = document.getElementById("dv").value.trim().toUpperCase();
+
+            const resultado = document.getElementById("resultado");
+
+            if (rut === "") {
+
+                resultado.style.display = "block";
+                resultado.className = "resultado error";
+                resultado.innerHTML = "Debe ingresar un número de RUT.";
+
+                return;
+            }
+
+            if (!/^\d+$/.test(rut)) {
+
+                resultado.style.display = "block";
+                resultado.className = "resultado error";
+                resultado.innerHTML = "El número de RUT sólo debe contener dígitos.";
+
+                return;
+            }
+
+            if (dv === "") {
+
+                const dvCalculado = obtenerDigitoVerificador(parseInt(rut));
+
+                resultado.style.display = "block";
+                resultado.className = "resultado info";
+                resultado.innerHTML =
+                    "El dígito verificador para el RUT <b>" +
+                    rut +
+                    "</b> es <b>" +
+                    dvCalculado +
+                    "</b>";
+
+                return;
+            }
+
+            if (validarRutCompleto(rut, dv)) {
+
+                resultado.style.display = "block";
+                resultado.className = "resultado success";
+                resultado.innerHTML =
+                    "✅ El RUT <b>" + rut + "-" + dv +
+                    "</b> es válido.";
+
+            } else {
+
+                resultado.style.display = "block";
+                resultado.className = "resultado error";
+                resultado.innerHTML =
+                    "❌ El RUT <b>" + rut + "-" + dv +
+                    "</b> NO es válido.";
+            }
+        }
+
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Validador de RUT Chileno",
+        "url": "https://www.tudominio.cl/validador-rut",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "description": "Herramienta gratuita para validar un RUT chileno y calcular automáticamente su dígito verificador usando el algoritmo Módulo 11.",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "CLP"
+        }
+    }
+    </script>
+</body>
+
+</html>
